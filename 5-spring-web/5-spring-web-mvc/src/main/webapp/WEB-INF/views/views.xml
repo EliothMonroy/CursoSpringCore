@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="login" extends="login.definition">
+		<put-attribute name="content" value="/WEB-INF/views/login.jsp"></put-attribute>
+	</definition>
+
+	<definition name="customer/welcome" extends="customer.definition">
+		<put-attribute name="content" value="/WEB-INF/views/admin/welcome/welcome.jsp"></put-attribute>
+	</definition>
+
+	<definition name="customer/dashboard" extends="customer.definition">
+		<put-attribute name="content" value="/WEB-INF/views/admin/dashboard/dashboard.jsp"></put-attribute>
+	</definition>
+
+	<definition name="customer/manage/accounts" extends="customer.definition">
+		<put-attribute name="content" value="/WEB-INF/views/customer/manage/accounts.jsp"></put-attribute>
+	</definition>
+
+	<definition name="customer/manage/accounts/view" extends="customer.definition">
+		<put-attribute name="content" value="/WEB-INF/views/customer/manage/viewAccount.jsp"></put-attribute>
+	</definition>
+
+	<definition name="customer/manage/accounts/create" extends="customer.definition">
+		<put-attribute name="content" value="/WEB-INF/views/customer/manage/createAccount.jsp"></put-attribute>
+	</definition>
+
+	<definition name="customer/manage/accounts/transfer" extends="customer.definition">
+		<put-attribute name="content" value="/WEB-INF/views/customer/manage/viewTransferAccount.jsp"></put-attribute>
+	</definition>
+
+	<definition name="admin/welcome" extends="admin.definition">
+		<put-attribute name="content" value="/WEB-INF/views/admin/welcome/welcome.jsp"></put-attribute>
+	</definition>
+
+	<definition name="admin/dashboard" extends="admin.definition">
+		<put-attribute name="content" value="/WEB-INF/views/admin/dashboard/dashboard.jsp"></put-attribute>
+	</definition>
+
+	<definition name="admin/manage/customers" extends="admin.definition">
+		<put-attribute name="content" value="/WEB-INF/views/admin/manageCustomers/customers.jsp"></put-attribute>
+	</definition>
+
+	<definition name="admin/manage/customers/view" extends="admin.definition">
+		<put-attribute name="content" value="/WEB-INF/views/admin/manageCustomers/viewCustomer.jsp"></put-attribute>
+	</definition>
+
+	<definition name="admin/manage/customers/create" extends="admin.definition">
+		<put-attribute name="content" value="/WEB-INF/views/admin/manageCustomers/createCustomer.jsp"></put-attribute>
+	</definition>
+
+	<definition name="admin/manage/customers/edit" extends="admin.definition">
+		<put-attribute name="content" value="/WEB-INF/views/admin/manageCustomers/editCustomer.jsp"></put-attribute>
+	</definition>
+
+	<definition name="error404" extends="error.404.definition" />
+
+</tiles-definitions>

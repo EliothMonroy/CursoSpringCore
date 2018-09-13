@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="layout.definition" template="/WEB-INF/views/template/_layout.jsp">
+		<put-attribute name="topMenu"
+			value="/WEB-INF/views/template/admin_topMenu.jsp"></put-attribute>
+		<put-attribute name="content" value=""></put-attribute>
+		<put-attribute name="sidebar"
+			value="/WEB-INF/views/template/admin_sidebar.jsp"></put-attribute>
+		<put-attribute name="footer"
+			value="/WEB-INF/views/template/layout_footer.jsp"></put-attribute>
+	</definition>
+
+	<definition name="admin.definition" extends="layout.definition">
+		<put-attribute name="content" value=""></put-attribute>
+	</definition>
+
+	<definition name="customer.definition" extends="layout.definition">
+		<put-attribute name="topMenu"
+			value="/WEB-INF/views/template/customer_topMenu.jsp"></put-attribute>
+		<put-attribute name="content" value=""></put-attribute>
+		<put-attribute name="sidebar"
+			value="/WEB-INF/views/template/customer_sidebar.jsp"></put-attribute>
+		<put-attribute name="footer"
+			value="/WEB-INF/views/template/layout_footer.jsp"></put-attribute>
+	</definition>
+
+	<definition name="login.definition" extends="layout.definition">
+		<put-attribute name="topMenu"
+			value="/WEB-INF/views/template/login_topMenu.jsp"></put-attribute>
+		<put-attribute name="sidebar"
+			value="/WEB-INF/views/template/login_sidebar.jsp"></put-attribute>
+	</definition>
+
+	<definition name="error.404.definition" template="/WEB-INF/views/error/404.jsp" />
+
+</tiles-definitions>

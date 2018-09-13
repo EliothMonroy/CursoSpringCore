@@ -1,0 +1,10 @@
+TODO 8.
+Definir interface IJugador, con un método void saludar()
+
+
+TODO 9.
+Definir POJOs JugadorAmericano, JugadorBeisbol, JugadorRugby
+
+
+TODO 10.
+Intercambia implementaciones de jugadorBean en configuracion de beans xml...

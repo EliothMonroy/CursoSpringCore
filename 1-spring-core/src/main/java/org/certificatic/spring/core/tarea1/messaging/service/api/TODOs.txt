@@ -1,0 +1,10 @@
+TODO 1.
+Analizar clases del paquete tarea1 e implementar NotificationServiceImpl
+
+
+TODO 2.
+Definir beans en src\main\resources\spring\tarea1\notification-application-context.xml
+
+
+TODO 3.
+Implementar TEST NotificationSpringTest

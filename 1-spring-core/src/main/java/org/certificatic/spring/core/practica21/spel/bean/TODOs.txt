@@ -1,0 +1,105 @@
+TODO 1.
+Analizar clases POJO GuessNumber y Magician
+
+
+TODO 2.
+Analizar TEST ResourceClassPathXmlApplicationContextTest (ojo revisar carpeta copy-classpath)
+
+
+TODO 3.
+Definir bean GuessNumber y Magician en \spring\practica21\spel-application-context.xml
+
+
+TODO 4.
+Analizar TEST SpELTest_1
+
+
+------------------------------------------------------------
+
+
+TODO 5.
+Analizar y completar TEST LiteralExpressionsTest_2
+
+
+------------------------------------------------------------
+
+
+TODO 6.
+Analizar clases POJO Inventor, PlaceOfBirth, Society y SocietyStub (esta última esta en el paquete test)
+
+
+TODO 7.
+Analizar y completar TEST PropertiesArraysListsMapsAndIndexersExpressionsTest_3
+
+
+------------------------------------------------------------
+
+
+TODO 8.
+Analizar y completar TEST MethodExpressionsTest_4
+
+
+------------------------------------------------------------
+
+
+TODO 9.
+Analizar TEST OperatorsExpressionsTest_5
+
+
+------------------------------------------------------------
+
+
+TODO 10.
+Analizar y Completar TEST AssignmentTypesConstructorExpressionsTest_6
+
+
+------------------------------------------------------------
+
+
+TODO 11.
+Analizar clase POJO Chicharronera y MyBeanResolver.
+
+
+TODO 12.
+Analizar clase de configuración ApplicationConfig.
+
+
+TODO 13. 
+Definir bean MyBeanResolver e Inventor (con nombre teslaBean) en \spring\practica21\spel-application-context.xml
+
+
+TODO 14.
+Analizar y Completar TEST VariablesFunctionsBeanReferencesExpressionsTest_7
+
+
+------------------------------------------------------------
+
+
+TODO 15.
+Analizar y Completar TEST VariablesFunctionsBeanReferencesExpressionsTest_8
+
+
+------------------------------------------------------------
+
+
+TODO 16.
+Analizar y Completar TEST TemplatingExpressionsTest_9
+
+
+------------------------------------------------------------
+
+
+TODO 17.
+Analizar clase POJO IProcessor, StringProcessor y SingletonBean
+
+
+TODO 18.
+DEfine estructura para inyectar prototypes en SingletonBean
+
+
+TODO 19.
+Definir bean SingletonBean (singleton) y SitrngProcessor (prototype) en \spring\practica21\spel-application-context.xml
+
+
+TODO 20.
+Analizar y Completar TEST MethodInjectionTest

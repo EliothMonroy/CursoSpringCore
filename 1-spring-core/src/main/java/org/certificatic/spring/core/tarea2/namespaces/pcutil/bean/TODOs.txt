@@ -1,0 +1,10 @@
+TODO 1.
+Analizar clases del paquete tarea2
+
+
+TODO 2.
+Definir beans en src\main\resources\spring\tarea2\namespaces-p-c-util-application-context.xml
+
+
+TODO 3.
+Implementar TEST NamespacesPCUtilTest

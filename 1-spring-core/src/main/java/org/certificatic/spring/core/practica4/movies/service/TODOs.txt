@@ -1,0 +1,10 @@
+TODO 3.
+Define clase MovieListener
+
+
+TODO 4.
+Define beans en src\main\resources\spring\practica4\movies-application-context.xml
+
+
+TODO 5.
+Implementa TEST MoviesSpringTest

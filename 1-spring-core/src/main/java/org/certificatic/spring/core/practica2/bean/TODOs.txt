@@ -1,0 +1,5 @@
+TODO 1.
+Definir beans en src\main\resources\spring\practica2\beans.xml
+
+TODO 2.
+Implementar TESTs

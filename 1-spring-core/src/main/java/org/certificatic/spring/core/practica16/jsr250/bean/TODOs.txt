@@ -1,0 +1,9 @@
+TODO 1.
+Analizar Clases Student y Subject
+
+TODO 3.
+Definir beans en src\main\resources\spring\practica16\annotations-jsr250-application-context.xml
+
+
+TODO 4.
+Implementar TEST Jsr250AnnotationTest

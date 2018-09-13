@@ -1,0 +1,63 @@
+TODO 1.
+Analizar TEST ResourceClassPathXmlApplicationContextTest (ojo revisar carpeta copy-classpath)
+
+
+TODO 2.
+Analizar TEST ResourceFileSystemXmlApplicationContextTest (ojo revisar carpeta copy-fileSystem)
+
+
+------------------------------------------------------------
+
+
+TODO 3.
+Analizar clase Resources.
+
+
+TODO 4.
+Definir bean Resources en spring\practica20\resources-application-context.xml
+
+
+TODO 5.
+Implementar TEST ResourcesTest (ojo revisar carpeta copy-resources)
+
+
+------------------------------------------------------------
+
+
+TODO 6.
+Analizar clase BeanResourceLoaderAware, definirla como bean componente, 
+implementar interface ResourceLoaderAware e inyectar dependencia Resources.
+
+
+TODO 7.
+Habilitar <context:component-scan /> en spring\practica20\resources-application-context.xml
+
+
+TODO 8.
+Implementar TEST ResourceLoaderAwareTest (ojo revisar carpeta copy-resource-loader-aware)
+
+
+------------------------------------------------------------
+
+
+TODO 9.
+Analizar clase FavouriteRockBands, definirla como bean componente e inyectar dependencias.
+
+
+TODO 10.
+Definir PropertyPlaceholderConfigurer en spring\practica20\resources-application-context.xml
+
+
+TODO 11.
+Implementar TEST PropertyPlaceholderTest
+
+
+TODO 12 - Bonus.
+Definir <context:property-placeholder/> y <util:properties /> en spring\practica20\resources-application-context.xml
+Para evitar PropertyPlaceholderConfigurer
+
+
+TODO 13 - Bonus.
+Ejecutar TEST PropertyPlaceholderTest
+
+

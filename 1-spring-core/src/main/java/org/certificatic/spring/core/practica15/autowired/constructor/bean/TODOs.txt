@@ -1,0 +1,12 @@
+TODO III
+
+TODO 1.
+Analizar clases Engineer, Laptop y Stylus
+
+
+TODO 2.
+Definir beans en src\main\resources\spring\practica15\annotations-autowired-constructor-application-context.xml
+
+
+TODO 3.
+Implementar TEST AutowiredConstructorAnnotationTest

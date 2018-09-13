@@ -1,0 +1,29 @@
+TODO 1.
+Analizar clases POJO Car, Engine, Wheel y WheelGroup
+
+
+TODO 2.
+Definir beans en src\main\resources\spring\practica13\autowire-byName-application-context.xml
+ByName
+
+
+TODO 3.
+Implementar TEST AutowireTest parte 1
+
+
+TODO 4.
+Definir beans en src\main\resources\spring\practica13\autowire-byType-application-context.xml
+ByName
+
+
+TODO 5.
+Implementar TEST AutowireTest parte 2
+
+
+TODO 6.
+Definir beans en src\main\resources\spring\practica13\autowire-constructor-application-context.xml
+ByName
+
+
+TODO 7.
+Implementar TEST AutowireTest parte 3

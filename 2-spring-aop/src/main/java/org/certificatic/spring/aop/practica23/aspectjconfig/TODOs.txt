@@ -1,0 +1,31 @@
+TODO 1.
+Analizar interfaces IAdivinador y IVoluntario
+
+
+TODO 2.
+Analizar clase Participante
+
+
+TODO 3.
+Analizar clase Mago
+
+
+TODO 4.
+Definir clase Mago como bean y como Aspecto mediante anotaciones
+
+
+TODO 5.
+Definir @Pointuct's en clase Mago
+
+
+TODO 6.
+Definir advices @Before y @Around en clase Mago
+
+
+TODO 7.
+Analizar beans definidos en spring\practica23\mago-aop-application-context.xml
+
+
+TODO 8.
+Analizar y Completar TEST MagoSpringAopAspectJTest
+

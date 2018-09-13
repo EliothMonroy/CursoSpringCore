@@ -1,0 +1,10 @@
+TODO 1.
+Analizar clases POJO Address, AddressBook, Person y Phone
+
+
+TODO 2.
+Definir beans en src\main\resources\spring\practica12\collections-application-context.xml
+
+
+TODO 3.
+Implementar TEST CollectionsTest

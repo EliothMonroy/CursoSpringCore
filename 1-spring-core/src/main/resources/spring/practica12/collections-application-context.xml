@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Define bean clase AddressBook -->
+
+
+	<bean name="telefonoPapa"
+		class="org.certificatic.spring.core.practica12.collections.bean.Phone">
+		<property name="number" value="1111-2222"></property>
+	</bean>
+
+	<bean name="telefonoMama"
+		class="org.certificatic.spring.core.practica12.collections.bean.Phone">
+		<property name="number" value="3333-4444"></property>
+	</bean>
+
+	<bean name="telefonoHermanaMayor"
+		class="org.certificatic.spring.core.practica12.collections.bean.Phone">
+		<property name="number" value="5555-6666"></property>
+	</bean>
+
+	<bean name="telefonoHermanoMenor"
+		class="org.certificatic.spring.core.practica12.collections.bean.Phone">
+		<property name="number" value="7777-8888"></property>
+	</bean>
+
+	<bean id="ivanDireccionBean"
+		class="org.certificatic.spring.core.practica12.collections.bean.Address">
+		<constructor-arg index="0" value="Xicotencatl" type="java.lang.String" />
+		<constructor-arg index="1" value="122" type="int" />
+		<constructor-arg index="2" value="7" type="java.lang.Integer" />
+		<property name="neighbor" value="Del Valle" />
+	</bean>
+
+	<bean id="lauraDireccionBean"
+		class="org.certificatic.spring.core.practica12.collections.bean.Address">
+		<constructor-arg name="street" value="Av. Popocatepetl"
+			type="java.lang.String" />
+		<constructor-arg name="externalNumber" value="1504"
+			type="int" />
+		<constructor-arg name="internalNumber" value="1"
+			type="java.lang.Integer" />
+		<property name="neighbor" value="Chapultepec Morales"></property>
+	</bean>
+
+	<bean id="pedroDireccionBean"
+		class="org.certificatic.spring.core.practica12.collections.bean.Address">
+		<constructor-arg name="street" value="Hegel"
+			type="java.lang.String" />
+		<constructor-arg name="externalNumber" value="2" type="int" />
+		<constructor-arg name="internalNumber" value="10"
+			type="java.lang.Integer" />
+		<property name="neighbor" value="Pencil"></property>
+	</bean>
+
+	<bean id="numero4" class="java.lang.Integer">
+		<constructor-arg value="4" />
+	</bean>
+
+</beans>

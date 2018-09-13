@@ -1,0 +1,15 @@
+TODO 1.
+Analizar clase Worker
+
+
+TODO 2.
+Implementar Clases BeanPostProcessor1, BeanPostProcessor2, y BeanPostProcessor3
+Implementando interfaces BeanPostProcessor y Ordered
+
+
+TODO 3.
+Definir beans en src\main\resources\spring\practica10\bean-post-processors-application-context.xml
+
+
+TODO 4.
+Implementar TEST BeanPostProcessorsTest

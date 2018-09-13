@@ -1,0 +1,34 @@
+TODO 1.
+Analizar Interfaces IComponentClass, IControllerClass, IRepositoryClass, IRestControllerClass, IServiceClass
+
+
+TODO 2.
+Implementar ComponentClassImpl1
+
+
+TODO 3.
+Implementar ControllerClassImpl1
+
+
+TODO 4.
+Implementar RepositoryClassImpl1
+
+
+TODO 5.
+Implementar RestControllerClassImpl1
+
+
+TODO 6.
+Implementar ServiceClassImpl1
+
+
+TODO 7.
+Definir beans en spring\practica17\component-scan-stereotypes-application-context.xml
+
+
+TODO 8.
+Ejecutar TEST StereotypesTest
+
+
+TODO 9.
+Implementar TEST StereotypesBetterTest

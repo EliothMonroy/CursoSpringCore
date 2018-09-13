@@ -1,0 +1,13 @@
+TODO 1.
+Analizar clase Persona
+
+
+TODO 2.
+Analizar Custom Scope
+
+TODO 3. 
+Definir beans en src\main\resources\spring\practica5\scopes-application-context.xml
+
+
+TODO 4.
+Implementa TESTs ScopesSpringTest y CustomScopesSpringTest

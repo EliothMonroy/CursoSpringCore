@@ -1,0 +1,29 @@
+TODO 1.
+Analizar interfaces IAudiencia y IJugador
+
+
+TODO 2.
+Analizar clase Jugador
+
+
+TODO 3.
+Analizar clase Audiencia, definir clase Audiencia como bean
+
+
+TODO 4.
+Analizar beans definidos en spring\practica22\partido-sin-aop-application-context.xml
+
+
+TODO 5.
+Analizar TEST PartidoSpringNoAopXmlTest
+
+
+-------------------------------------------------------------
+
+
+TODO 6.
+Definir configuración de aspecto en spring\practica22\partido-con-aop-application-context.xml
+
+
+TODO 7.
+Analizar TEST PartidoSpringAopXmlTest

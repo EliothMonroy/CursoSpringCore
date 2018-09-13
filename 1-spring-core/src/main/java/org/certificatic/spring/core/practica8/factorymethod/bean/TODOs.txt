@@ -1,0 +1,10 @@
+TODO 1.
+Analizar clases POJO Student, Subject y Teacher
+
+
+TODO 2.
+Definir beans en src\main\resources\spring\practica8\factory-method-application-context.xml
+
+
+TODO 3.
+Implementar TEST FactoryMethodTest

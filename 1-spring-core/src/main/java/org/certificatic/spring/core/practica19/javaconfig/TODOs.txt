@@ -1,0 +1,42 @@
+TODO 1.
+Revisar beans en spring\practica19\datasource-application-context.xml
+
+
+TODO 2.
+Analizar clase DummyRepository
+
+
+TODO 3.
+Analizar clase DummyService
+
+
+TODO 4.
+Analizar interface IQuadraticEquationService
+
+
+TODO 5.
+Analizar clase POJO QuadraticEquationResult
+
+
+TODO 6.
+Analizar clase implementación QuadraticEquationServiceImpl
+
+
+TODO 7.
+Analizar clase POJO QuadraticEquation (analizar que no es singleton)
+
+
+TODO 8.
+Definir beans de repositorio por java config
+
+
+TODO 9.
+Definir beans de servicio por java config
+
+
+TODO 10.
+Definir beans de la aplicación por java config
+
+
+TODO 11.
+Implementar TEST JavaConfigTest

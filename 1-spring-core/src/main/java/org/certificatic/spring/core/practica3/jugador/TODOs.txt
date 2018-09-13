@@ -1,0 +1,11 @@
+TODO 1.
+Definir POJO JugadorFutbol, con nombre, torneo y partido.
+
+TODO 2.
+Implementar en clase JugadorFutbol un método saludar()
+
+ayuda:
+System.out.println("hola soy un jugador de Futbol");
+System.out.println("me llamo: " + this.nombre + " ["
+		+ Integer.toHexString(super.hashCode()) + "]");
+

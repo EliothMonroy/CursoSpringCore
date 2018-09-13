@@ -1,0 +1,15 @@
+TODO V
+
+TODO 1.
+Analizar clases PropellingPencil, Student y StudentBook
+
+TODO 2.
+Realizar inyeccion por método en la(s) clase(s) que aplique(n)
+
+
+TODO 3.
+Definir beans en src\main\resources\spring\practica15\annotations-autowired-methods-application-context.xml
+
+
+TODO 4.
+Implementar TEST AutowiredMethodsAnnotationTest

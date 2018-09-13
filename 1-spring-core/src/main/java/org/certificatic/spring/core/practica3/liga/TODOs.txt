@@ -1,0 +1,19 @@
+TODO 3.
+Definir POJOs Evento, Torneo y Partido conforme al diseño propuesto
+
+
+TODO 4.
+Implementar TEST EstadioNoSpringTest
+
+
+TODO 5.
+Definir beans en src\main\resources\spring\practica3\jugador-application-context.xml
+
+
+TODO 6.
+Implementar TEST EstadioSpringTest
+
+
+TODO 7.
+Analizar como implementar una Jugador de Futbol Americano...
+(analizar Polimorfizmo).

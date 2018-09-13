@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+
+	<context:component-scan
+		base-package="org.certificatic.spring.aop.practica24.bank,org.certificatic.spring.aop.util.bean" />
+
+	<!-- TODO 11. -->
+	<aop:config>
+
+		<!-- no works for combination in advice pointcut expression -->
+		<aop:pointcut id="webLayer"
+			expression="within(org.certificatic.spring.aop.practica24.bank.web..*)" />
+
+		<!-- no works for combination in advice pointcut expression -->
+		<aop:pointcut id="serviceLayer"
+			expression="within(org.certificatic.spring.aop.practica24.bank.service..*)" />
+
+		<!-- no works for combination in advice pointcut expression -->
+		<aop:pointcut id="dataAccessLayer"
+			expression="within(org.certificatic.spring.aop.practica24.bank.dao..*)" />
+
+
+		<aop:aspect ref="serviceAccountLoggingAspect">
+
+			<aop:before
+				pointcut="within(org.certificatic.spring.aop.practica24.bank.service..*) and args(account, ..)"
+				method="beforeServiceAccountMethodExecutionAccount" />
+
+			<aop:before
+				pointcut="within(org.certificatic.spring.aop.practica24.bank.service..*) and args(customerId, ..)"
+				method="beforeServiceAccountMethodExecutionLong" />
+
+		</aop:aspect>
+
+		<aop:aspect ref="webAccountLoggingAspect">
+
+			<!-- completar advice before de método beforeAccountMethodExecutionAccount -->
+
+			<!-- completar advice before de método beforeAccountMethodExecutionLong -->
+
+
+		</aop:aspect>
+
+		<aop:aspect ref="daoAccountLoggingAspect">
+
+			<!-- 1. completar pointcut (Account) within(org.certificatic.spring.aop.practica24.bank.dao..*) 
+				and args(yy, ..) -->
+			<!-- 2. completar advice before para pointcut definido anteriormente (Account) -->
+
+
+			<!-- 1. completar pointcut (Long) within(org.certificatic.spring.aop.practica24.bank.dao..*) 
+				and args(bb, ..) -->
+			<!-- 2. completar advice before para pointcut definido anteriormente (Long) -->
+
+
+		</aop:aspect>
+
+		<!-- Define aspecto profilingAspect -->
+
+	</aop:config>
+
+</beans>

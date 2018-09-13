@@ -1,0 +1,19 @@
+TODO 1.
+Analizar clase ConnectionDataBase
+
+
+TODO 2.
+Definir beans en src\main\resources\spring\practica9\bean-def-inheritance-application-context.xml
+
+
+TODO 3.
+Implementar TEST BeanDefinitionInheritanceTest parte 1
+
+
+TODO 4.
+Definir beans en src\main\resources\spring\practica9\bean-def-inheritance-application-context2.xml
+Utilizar bean abstracto
+
+
+TODO 5.
+Implementar TEST BeanDefinitionInheritanceTest parte 2

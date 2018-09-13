@@ -1,0 +1,12 @@
+TODO II
+
+TODO 1.
+Analizar clases Journalist, NoteBook y Pen
+
+
+TODO 2.
+Definir beans en src\main\resources\spring\practica15\annotations-autowired-setter-application-context.xml
+
+
+TODO 3.
+Implementar TEST AutowiredSetterAnnotationTest

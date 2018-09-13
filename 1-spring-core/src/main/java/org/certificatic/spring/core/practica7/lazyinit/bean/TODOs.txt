@@ -1,0 +1,10 @@
+TODO 1.
+Analizar clases POJO Car, Engine y Wheel
+
+
+TODO 2.
+Definir beans en src\main\resources\spring\practica7\lazy-init-application-context.xml
+
+
+TODO 3.
+Implementar TEST LazyInitTest

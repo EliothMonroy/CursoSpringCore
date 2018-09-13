@@ -1,0 +1,12 @@
+TODO I
+
+TODO 1.
+Analizar clases Airline y Airplane
+
+
+TODO 2.
+Definir beans en src\main\resources\spring\practica15\annotations-autowired-requiredFalse-qualifier-application-context.xml
+
+
+TODO 3.
+Implementar TEST AutowiredRequredFalseQualifierAnnotationTest

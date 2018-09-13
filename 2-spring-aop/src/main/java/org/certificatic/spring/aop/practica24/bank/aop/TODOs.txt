@@ -1,0 +1,53 @@
+TODO 1.
+Analizar clase Account
+
+
+TODO 2.
+Analizar interface IAccountDAO e implementacion AccountDAO
+
+
+TODO 3.
+Analizar interface IAccountService e implementacion AccountService
+
+
+TODO 4.
+Analizar interface IAccountWebView e implementacion AccountWebView
+
+
+TODO 5.
+Analizar clase WebAccountLoggingAspect, definir como Aspecto
+y definir advices correspondientes
+
+
+TODO 6.
+Analizar clase ServiceAccountLoggingAspect, definir como Aspecto
+y definir advices correspondientes
+
+
+TODO 7.
+Analizar clase DAOAccountLoggingAspect, definir como Aspecto
+y definir advices correspondientes
+
+
+TODO 8.
+Analizar beans definidos en spring\practica24\bank-aop-aspectj-application-context.xml
+
+
+TODO 9.
+Analizar y Completar TEST BankSpringAopAspectJTest
+
+
+TODO 10.
+Implementar ProfilingAspect.
+
+
+-----------------------------------------------------------------
+
+
+TODO 11. 
+Implementar misma definicion de aspectos mediante configuración por XML en
+spring\practica24\bank-aop-xml-application-context.xml
+
+
+TODO 12.
+Analizar y Completar TEST BankSpringAopXMLTest

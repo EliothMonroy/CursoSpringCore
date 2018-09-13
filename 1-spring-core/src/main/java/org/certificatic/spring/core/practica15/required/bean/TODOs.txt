@@ -1,0 +1,16 @@
+TODO VI
+
+TODO 1.
+Analizar Clase Cameraman
+
+TODO 2.
+Utilizar anotación correspondiente para obligar inyección vía setter (por xml)
+que satisfaga las dependencias name y dni 
+
+
+TODO 3.
+Definir beans en src\main\resources\spring\practica15\annotations-required-application-context.xml
+
+
+TODO 4.
+Implementar TEST RequiredAnnotationTest

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+
+	<!-- habilitar component scan -->
+
+	<bean id="itDirector"
+		class="org.certificatic.spring.core.practica18.jsr330.bean.api.impl.Director">
+		<property name="budget.amount" value="3500000" />
+		<property name="employee" ref="itDirectorEmployee" />
+	</bean>
+
+	<bean id="generalDirectorBean"
+		class="org.certificatic.spring.core.practica18.jsr330.bean.api.impl.Director">
+		<property name="budget.amount" value="9000000" />
+		<property name="employee" ref="generalDirectorEmployee" />
+	</bean>
+
+
+	<util:list id="teamXListStringBean" list-class="java.util.ArrayList"
+		value-type="java.lang.String">
+		<value>Hugo</value>
+		<value>Paco</value>
+		<value>Luis</value>
+	</util:list>
+
+	<util:list id="teamYListStringBean" list-class="java.util.ArrayList"
+		value-type="java.lang.String">
+		<value>Pancho</value>
+		<value>Jacobo</value>
+		<value>Uriel</value>
+	</util:list>
+
+</beans>

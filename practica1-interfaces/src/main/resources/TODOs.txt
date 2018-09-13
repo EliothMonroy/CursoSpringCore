@@ -1,0 +1,70 @@
+TODO 1.
+En paquete org.certificatic.practica1.interfaces.livingbeing.api
+Crear Interface IBugEater
+Crear Interface ILivingBeing
+
+
+TODO 2.
+Clase Animal definir como abstracta e implementar ILivingBeing
+
+
+TODO 3.
+Clase Plant definir como abstracta e implementar ILivingBeing 
+
+
+TODO 4.
+Clase Aardvark heredar de Animal e implementar IBugEater
+
+
+TODO 5.
+Clase VenusFlyTrap heredar de Plant e implementar IBugEater
+
+Ayuda.
+System.out.println("born like a " + this.getType() + " (" + this.getSubType() + ")");
+
+
+TODO 6.
+Implementar test LivingBeingTest
+
+
+TODO 7.
+Mejorar test LivingBeingTest implementando clase Spring
+
+
+-----------------------------------------------
+
+
+TODO 8.
+Analizar Clases Operaciones y Calculadora
+
+
+TODO 9.
+Analizar test OperacionesTest
+
+
+-----------------------------------------------
+
+
+TODO 11.
+Definir los métodos en interface IAdd
+Definir los métodos en interface ISubtract
+Definir los métodos en interface IMultiply
+Definir los métodos en interface IDivide
+Definir los métodos en interface ICalculator
+
+
+TODO 12.
+Implementar clase base Calculator (implementa ICalculator)
+
+
+TODO 13.
+Implementar clase KidsCalculator, hereda de calculator y solo puede sumar y restar
+
+
+TODO 14.
+Implementar clase SimpleCalculator, hereda de calculator y puede sumar, restar, dividir y multiplicar
+
+
+TODO 15.
+Implementar test KidsCalculatorTest
+

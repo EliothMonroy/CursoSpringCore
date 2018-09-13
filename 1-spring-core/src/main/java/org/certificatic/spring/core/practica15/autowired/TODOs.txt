@@ -1,0 +1,11 @@
+1. Revisar TODO I: autowired required False
+
+2. Revisar TODO II: autowired on setter
+
+3. Revisar TODO III: autowired on constructor
+
+4. Revisar TODO IV: autowired on properties
+
+5. Revisar TODO V: autowired on methods
+
+6. Revisar TODO VI: required setter xml injection

@@ -1,0 +1,26 @@
+TODO 1.
+Analizar clase StringProcessor e interface IProcessor
+
+
+TODO 2.
+Analizar clase SingletonBean
+
+
+TODO 3.
+Definir bean singleton SingletonBean en spring\practica21\method-injection-contextt.xml
+
+
+TODO 4.
+Definir bean prototype StringProcessor en spring\practica21\method-injection-contextt.xml
+
+
+TODO 5.
+Inyectar bean prototype de tipo IProcessor en clase SingletonBean
+
+
+TODO 6.
+Implementar inyección de métodos sobre clase SingletonBean.
+
+
+TODO 7.
+Analizar, Completar y Ejecutar TEST MethodInjectionTest

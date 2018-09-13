@@ -1,0 +1,24 @@
+TODO 1.
+Analizar clase ConnectionDataBase e implementar init method y destroy method
+
+
+TODO 2.
+Definir beans en src\main\resources\spring\practica6\init-destroy-application-context.xml
+Definir init-method y destroy-method con los metodos connect y disconnect
+
+
+TODO 3.
+Implementar TEST InitDestroyTest
+
+
+TODO 4.
+Definir beans en src\main\resources\spring\practica6\init-destroy-application-context.xml
+Definir default-init-method y default-destroy-method con los metodos initMethod y destroyMethod
+
+
+TODO 5.
+Analizar clase ConnectionDataBase e implementar InitializingBean y DisposableBean
+
+
+TODO 6.
+Implementar TEST InitDestroyTest

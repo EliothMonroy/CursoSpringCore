@@ -1,0 +1,4 @@
+04-28 18:29:34 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "TRUNCATE SPRING_DATA_CUSTOMER_TBL[*] "; se esperaba "TABLE"
+Syntax error in SQL statement "TRUNCATE SPRING_DATA_CUSTOMER_TBL[*] "; expected "TABLE"; SQL statement:
+truncate SPRING_DATA_CUSTOMER_TBL [42001-170]

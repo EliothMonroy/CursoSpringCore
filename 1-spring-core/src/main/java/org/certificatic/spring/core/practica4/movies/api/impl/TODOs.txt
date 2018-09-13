@@ -1,0 +1,2 @@
+TODO 2.
+Define clase MovieFinderImple como implementacion de IMovieFinder

@@ -1,0 +1,10 @@
+TODO 1.
+Analizar clases POJO Address y Person
+
+
+TODO 2.
+Definir beans en src\main\resources\spring\practica11\inner-beans-application-context.xml
+
+
+TODO 3.
+Implementar TEST InnerBeansTest
