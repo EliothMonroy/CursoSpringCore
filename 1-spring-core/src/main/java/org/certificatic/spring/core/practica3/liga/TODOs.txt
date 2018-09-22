@@ -1,5 +1,5 @@
 TODO 3.
-Definir POJOs Evento, Torneo y Partido conforme al diseño propuesto
+Definir POJOs Evento, Torneo y Partido conforme al diseÃ±o propuesto
 
 
 TODO 4.
