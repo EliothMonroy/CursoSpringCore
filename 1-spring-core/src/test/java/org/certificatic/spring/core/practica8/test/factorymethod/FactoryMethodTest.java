@@ -48,6 +48,8 @@ public class FactoryMethodTest {
 
 		// Implementar
 		Student dos=applicationContext.getBean("student2",Student.class);
+		Assert.assertNotNull(dos);
+		log.info("Student: {}",dos);
 	}
 
 }
