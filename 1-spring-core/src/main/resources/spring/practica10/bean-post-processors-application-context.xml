@@ -4,10 +4,17 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Define bean workerBean -->
+	<bean id="workerBean" class="org.certificatic.spring.core.practica10.beanpostprocessors.bean.Worker"
+		init-method="init" destroy-method="destroy">
+		<property name="name" value="Ilse"></property>
+	</bean>
 
 	<!-- Define bean clase BeanPostProcessor1 -->
+	<bean class="org.certificatic.spring.core.practica10.beanpostprocessors.bpp.BeanPostProcessor1"></bean>
+
 
 	<!-- Define bean clase BeanPostProcessor2 -->
+	<bean class="org.certificatic.spring.core.practica10.beanpostprocessors.bpp.BeanPostProcessor2"></bean>
 
 	<!-- Define bean clase BeanPostProcessor3 -->
 

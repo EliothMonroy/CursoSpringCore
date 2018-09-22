@@ -1,16 +1,18 @@
 package org.certificatic.spring.core.practica10.beanpostprocessors.bean;
 
+import org.certificatic.spring.core.practica10.beanpostprocessors.bean.api.IWorker;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 @ToString
-public class Worker {
+public class Worker implements IWorker{
 	private @Getter @Setter String name;
 	private @Getter @Setter int age;
 
 	public Worker() {
-		this.name = "Ivan García";
+		this.name = "Ivan Garcï¿½a";
 		this.age = 10;
 
 		System.out.println("[Construct] Worker name: " + this.name);
