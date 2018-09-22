@@ -16,15 +16,24 @@
 	</bean>
 
 	<!-- definir bean torneoBean -->
+	<!-- 
 	<bean id="torneoBean" class="org.certificatic.spring.core.practica3.liga.Torneo">
 		<property name="evento" ref="eventoBean" />
 		<property name="nombre">
 			<value>Final</value>
 		</property>
 	</bean>
+	 -->
+	 
+	<bean id="torneoBean" class="org.certificatic.spring.core.practica3.liga.Torneo">
+		<constructor-arg value="Final" />
+		<constructor-arg>
+			<ref bean="eventoBean"/>
+		</constructor-arg>
+	</bean>
 
 	<!-- definir bean jugadorBean -->
-	<bean id="jugador" class="org.certificatic.spring.core.practica3.jugador.JugadorFutbol">
+	<bean id="jugador" class="org.certificatic.spring.core.practica3.jugador.JugadorRugby">
 		<constructor-arg>
 			<ref bean="torneoBean"/>
 		</constructor-arg>

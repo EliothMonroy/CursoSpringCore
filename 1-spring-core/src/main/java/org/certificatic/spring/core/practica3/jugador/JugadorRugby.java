@@ -11,14 +11,14 @@ import lombok.Setter;
 
 @Data
 @AllArgsConstructor
-public class JugadorFutbol implements IJugador {
+public class JugadorRugby implements IJugador {
 
 	private @Setter(AccessLevel.NONE) Torneo torneo;
 	private @Setter(AccessLevel.NONE) Partido partido;
 	private @Setter(AccessLevel.NONE) String nombre;
 
 	public void saludar() {
-		System.out.println("hola soy un jugador de Futbol");
+		System.out.println("hola soy un jugador de Rugby");
 		System.out.println("me llamo: " + this.nombre + " ["
 				+ Integer.toHexString(super.hashCode()) + "]");
 	}
