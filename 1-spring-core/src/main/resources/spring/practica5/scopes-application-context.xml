@@ -5,20 +5,36 @@
 
 	<!-- singleton -->
 	<!-- Definir personaSingletonBean -->
+	<bean id="personaSingletonBean" scope="singleton"
+		class="org.certificatic.spring.core.practica5.scopes.bean.Persona" />
 	
 	
 	<!-- prototype -->
 	<!-- Definir personaPrototypeBean -->
+	<bean id="personaPrototypeBean" scope="prototype"
+		class="org.certificatic.spring.core.practica5.scopes.bean.Persona" />
 	
 	
 	<!-- custom scope -->
 	<!-- Definir customScopeBean -->
+	<bean id="customScopeBean" class="org.certificatic.spring.core.practica5.scopes.custom.bean.CustomScope" />
 	
 
 	<!-- configurador -->
 	<!-- Definir CustomScopeConfigurer -->
+	<bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+		<property name="scopes">
+			<map>
+				<entry key="customscope">
+					<ref bean="customScopeBean"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
 
 	<!-- bean customscope -->
 	<!-- Definir personaCustomScopeBean -->
+	<bean id="personaCustomScopeBean" scope="customscope"
+		class="org.certificatic.spring.core.practica5.scopes.bean.Persona" />
 
 </beans>

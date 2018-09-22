@@ -24,7 +24,6 @@ public class CustomScope implements Scope {
 
 		if (n >= 5) {
 			this.clearBeans();
-			n = 0;
 		}
 
 		if (!objectMap.containsKey(name)) {
@@ -36,7 +35,6 @@ public class CustomScope implements Scope {
 
 			objectMap.put(name, o);
 		}
-
 		n++;
 
 		return objectMap.get(name);
