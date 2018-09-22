@@ -3,8 +3,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
 	default-init-method="initMethod" default-destroy-method="destroyMethod">
+	<!-- Métodos por default, pero cada bean puede especificar los propios -->
 
 	<!-- Definir bean clase ConnectionDataBase -->
-
+	<bean scope="singleton" init-method="connect" destroy-method="disconnect" class="org.certificatic.spring.core.practica6.initdestroy.bean.ConnectionDataBase">
+		<property name="database" value="base1"></property>
+		<property name="user" value="usuario1"></property>
+		<property name="password" value="contra1"></property>
+	</bean>
 
 </beans>
