@@ -11,7 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class CustomScope implements Scope {
-
+	
+	//Solo un hilo puede escribir a la vez, thread safe
 	private Map<String, Object> objectMap = Collections.synchronizedMap(new HashMap<String, Object>());
 
 	private int n = 0;
