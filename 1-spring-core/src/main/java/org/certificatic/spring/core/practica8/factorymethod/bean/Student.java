@@ -19,5 +19,4 @@ public class Student {
 		a.getSubject().getTeacher().setName("Ivan");
 		return a;
 	}
-
 }
