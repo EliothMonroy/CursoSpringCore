@@ -4,9 +4,54 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Define bean clase Car -->
+	<bean class="org.certificatic.spring.core.practica7.lazyinit.bean.Car"
+		lazy-init="true" scope="singleton">
+		
+		<property name="engine" ref="engineBean" />
+
+		<property name="wheel1">
+			<ref bean="wheelBean"/>
+		</property>
+		<property name="wheel2">
+			<ref bean="wheelBean"/>
+		</property>
+		<property name="wheel3">
+			<ref bean="wheelBean"/>
+		</property>
+		<property name="wheel4">
+			<ref bean="wheelBean"/>
+		</property>
+		
+	</bean>
 
 	<!-- Define bean engine -->
+	<bean id="engineBean" class="org.certificatic.spring.core.practica7.lazyinit.bean.Engine">
+		<property name="cylinderNumber" value="8" />
+		<property name="hp">
+			<value>600</value>
+		</property>
+		<property name="serial">
+			<ref bean="serialStringBean"/>
+		</property>
+	</bean>
 
 	<!-- Define bean wheel -->
-
+	<bean id="wheelBean" scope="prototype"
+		class="org.certificatic.spring.core.practica7.lazyinit.bean.Wheel">
+	
+		<property name="brand" value="Pirelli" />
+		<property name="material" value="PET" />
+		<property name="rinSize">
+			<value>18</value>
+		</property>
+	</bean>
+	
+	
+	<!--  -->
+	<bean id="serialStringBean" class="java.lang.String">
+		<constructor-arg>
+			<value>ABC-123</value>
+		</constructor-arg>
+	</bean>
+	
 </beans>
