@@ -33,7 +33,7 @@
 	</bean>
 
 	<!-- definir bean jugadorBean -->
-	<bean id="jugador" class="org.certificatic.spring.core.practica3.jugador.JugadorRugby">
+	<bean id="jugador" class="org.certificatic.spring.core.practica3.jugador.JugadorBaseball">
 		<constructor-arg>
 			<ref bean="torneoBean"/>
 		</constructor-arg>
