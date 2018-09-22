@@ -5,8 +5,8 @@
 	default-init-method="initMethod" default-destroy-method="destroyMethod">
 
 	<!-- Definir bean clase ConnectionDataBase -->
-	<bean scope="singleton" init-method="connect" destroy-method="disconnect"
-		class="org.certificatic.spring.core.practica6.initdestroy.bean.ConnectionDataBase">
+	<bean scope="singleton" 
+		class="org.certificatic.spring.core.practica6.initdestroy.bean.ConnectionDataBase"> <!-- init-method="connect" destroy-method="disconnect" -->
 
 		<property name="database" value="produccionDB001" />
 		<property name="user" value="pepitoRoot_Admin2" />

@@ -1,9 +1,12 @@
 package org.certificatic.spring.core.practica6.initdestroy.bean;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
 import lombok.Data;
 
 @Data
-public class ConnectionDataBase {
+public class ConnectionDataBase implements InitializingBean, DisposableBean {
 	private String database;
 	private String user;
 	private String password;
@@ -28,6 +31,16 @@ public class ConnectionDataBase {
 				Integer.toHexString(super.hashCode()));
 
 		System.out.println(msg);
+	}
+
+	@Override
+	public void destroy() throws Exception {
+		this.disconnect();
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		this.connect();
 	}
 
 }
