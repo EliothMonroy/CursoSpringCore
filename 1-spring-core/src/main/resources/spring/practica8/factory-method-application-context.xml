@@ -4,7 +4,22 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Define bean student1 -->
+	<bean id="student1" class="org.certificatic.spring.core.practica8.factorymethod.bean.Student"
+		factory-method="constructStudent">
+		<constructor-arg index="1" value="Progra III"></constructor-arg>
+		<constructor-arg index="0" value="Pedrito"></constructor-arg>
+	</bean>
 
 	<!-- Define bean student2 -->
-
+	<bean id="student2" class="org.certificatic.spring.core.practica8.factorymethod.bean.Student"
+		factory-method="buildStudent"
+		factory-bean="studentFactoryBean">
+		<constructor-arg index="0" value="Progra I"></constructor-arg>
+		<constructor-arg index="1" value="Jaime"></constructor-arg>
+	</bean>
+	
+	<bean id="studentFactoryBean" class="org.certificatic.spring.core.practica8.factorymethod.bean.StudentFactory">
+		
+	</bean>
+	
 </beans>

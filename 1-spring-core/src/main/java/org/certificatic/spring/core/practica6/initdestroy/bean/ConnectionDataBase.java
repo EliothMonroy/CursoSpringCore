@@ -1,9 +1,12 @@
 package org.certificatic.spring.core.practica6.initdestroy.bean;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
 import lombok.Data;
 
 @Data
-public class ConnectionDataBase {
+public class ConnectionDataBase implements InitializingBean, DisposableBean{
 	private String database;
 	private String user;
 	private String password;
@@ -24,6 +27,18 @@ public class ConnectionDataBase {
 	public void showInfo() {
 		String msg=String.format("Connected to: %s: %s [%s]", database, user, Integer.toString(super.hashCode()));
 		System.out.println(msg);
+	}
+
+	@Override
+	public void destroy() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
