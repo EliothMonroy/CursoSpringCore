@@ -22,4 +22,12 @@ public class ConnectionDataBase {
 		System.out.println(msg);
 	}
 
+	public void showInfo() {
+		String msg = String.format("> Connected to: %s:%s [%s]",
+				database, user,
+				Integer.toHexString(super.hashCode()));
+
+		System.out.println(msg);
+	}
+
 }
