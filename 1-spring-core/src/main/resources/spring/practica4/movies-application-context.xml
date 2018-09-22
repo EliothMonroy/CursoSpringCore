@@ -4,7 +4,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- define bean de clase MovieListener -->
+	<bean id="movieListener" class="org.certificatic.spring.core.practica4.movies.service.MovieListener">
+		<property name="movieFinder" ref="movieFinderBean"></property>
+	</bean>
 
 	<!-- define bean movieFinderBean -->
+	<bean id="movieFinderBean" class="org.certificatic.spring.core.practica4.movies.api.impl.MovieFinderImpl">
+		
+	</bean>
 
 </beans>
