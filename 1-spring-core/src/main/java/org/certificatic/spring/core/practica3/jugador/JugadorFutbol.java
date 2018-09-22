@@ -1,5 +1,6 @@
 package org.certificatic.spring.core.practica3.jugador;
 
+import org.certificatic.spring.core.practica3.jugador.api.IJugador;
 import org.certificatic.spring.core.practica3.liga.Partido;
 import org.certificatic.spring.core.practica3.liga.Torneo;
 
@@ -10,7 +11,7 @@ import lombok.Setter;
 
 @Data
 @AllArgsConstructor
-public class JugadorFutbol {
+public class JugadorFutbol implements IJugador{
 
 	private @Setter(AccessLevel.NONE) Torneo torneo;
 	private @Setter(AccessLevel.NONE) Partido partido;
