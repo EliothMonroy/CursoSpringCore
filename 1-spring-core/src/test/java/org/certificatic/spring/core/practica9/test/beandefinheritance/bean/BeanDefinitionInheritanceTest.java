@@ -20,7 +20,7 @@ public class BeanDefinitionInheritanceTest {
 	public static void beforeClass() {
 		// Instanciar ApplicationContext
 		applicationContext=new ClassPathXmlApplicationContext(
-				"spring/practica9/bean-def-inheritance-application-context.xml");
+				"spring/practica9/bean-def-inheritance-application-context2.xml");
 	}
 	@AfterClass
 	public static void afterClass() {
