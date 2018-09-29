@@ -8,38 +8,51 @@ import org.certificatic.spring.core.practica17.stereotypes.api.IServiceClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 // Implementar run with spring-test
 // cargar context configuration
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations= {"classpath:/spring/practica17/component-scan-stereotypes-application-context.xml"})
 public class StereotypesBetterTest {
 
 	// Inyectar todas las dependencias
 
+	@Autowired
 	private IRestControllerClass restController;
-
+	
+	@Autowired
 	private IRestControllerClass restController2;
 
+	@Autowired
 	private IServiceClass service;
 
+	@Autowired
 	private IServiceClass service2;
 
+	@Autowired
 	private IControllerClass controller;
 
+	@Autowired
 	private IComponentClass component;
 
+	@Autowired
 	private IRepositoryClass repository;
 
 	@Before
 	public void beforeClass() {
-		Assert.assertNotNull(restController);
+		/*Assert.assertNotNull(restController);
 		Assert.assertNotNull(component);
 		Assert.assertNotNull(service);
 		Assert.assertNotNull(controller);
-		Assert.assertNotNull(repository);
-
+		Assert.assertNotNull(repository);*/
+		
 		Assert.assertSame(restController, restController2);
 		Assert.assertNotSame(service, service2);
 	}
@@ -52,7 +65,7 @@ public class StereotypesBetterTest {
 		String name = "My REST Controller Implementation";
 
 		Assert.assertNotNull(restController);
-		Assert.assertEquals(name, restController.getRestControllerClassName());
+		Assert.assertEquals(name, restController.getName());
 
 		log.info("restController: {}", restController);
 	}

@@ -30,7 +30,7 @@ public class StereotypesTest {
 		String name = "My REST Controller Implementation";
 
 		Assert.assertNotNull(restController);
-		Assert.assertEquals(name, restController.getRestControllerClassName());
+		Assert.assertEquals(name, restController.getName());
 
 		log.info("restController: {}", restController);
 

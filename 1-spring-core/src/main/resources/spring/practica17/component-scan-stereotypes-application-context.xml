@@ -5,6 +5,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- Habilitar component scan -->
+	<context:component-scan base-package="org.certificatic.spring.core.practica17" />
 
 
 	<bean id="restControllerClassName" class="java.lang.String">
