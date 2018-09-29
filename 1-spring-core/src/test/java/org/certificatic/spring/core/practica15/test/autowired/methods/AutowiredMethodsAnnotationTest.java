@@ -15,6 +15,7 @@ public class AutowiredMethodsAnnotationTest {
 		String ctxFile = "spring/practica15/annotations-autowired-methods-application-context.xml";
 
 		// Implementar
+		
 	}
 
 }

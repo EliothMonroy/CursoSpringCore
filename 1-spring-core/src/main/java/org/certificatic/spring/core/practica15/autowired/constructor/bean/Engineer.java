@@ -1,5 +1,7 @@
 package org.certificatic.spring.core.practica15.autowired.constructor.bean;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
@@ -10,16 +12,17 @@ public class Engineer {
 	private @Setter(AccessLevel.NONE) String name;
 	private @Setter(AccessLevel.NONE) Integer age;
 	private String dni;
-	private @Setter(AccessLevel.NONE) Laptop notebook;
-	private @Setter(AccessLevel.NONE) Stylus pen;
+	private @Setter(AccessLevel.NONE) Laptop laptop;
+	private @Setter(AccessLevel.NONE) Stylus stylus;
 
 	// Inyectar
-	public Engineer(String name, Integer age, Laptop notebook, Stylus pen) {
+	@Autowired
+	public Engineer(String name, Integer age, Laptop laptop, Stylus stylus) {
 		super();
 		this.name = name;
 		this.age = age;
-		this.notebook = notebook;
-		this.pen = pen;
+		this.laptop = laptop;
+		this.stylus = stylus;
 	}
 
 }
