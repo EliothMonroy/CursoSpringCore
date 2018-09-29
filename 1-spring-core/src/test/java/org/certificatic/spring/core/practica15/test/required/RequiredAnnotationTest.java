@@ -44,6 +44,7 @@ public class RequiredAnnotationTest {
 		Assert.notNull(cameraman.getDni());
 		//Assert.notNull(cameraman);
 		log.info("cameraman: {}",cameraman);
+		ctx.close();
 	}
 
 }
