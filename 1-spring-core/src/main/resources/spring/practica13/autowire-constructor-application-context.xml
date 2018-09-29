@@ -5,15 +5,31 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
-
 	<!-- Define bean clase Car -->
+	<bean class="org.certificatic.spring.core.practica13.autowire.bean.Car"
+		autowire="constructor" />
 
 	<!-- Define bean engine -->
+	<bean class="org.certificatic.spring.core.practica13.autowire.bean.Engine"
+		p:model="V8 Twin Turbo" p:cylinderNumber="8" 
+		p:serialNumber="ABC-123-XYZ" />
 
 	<!-- Define bean wheelGroup -->
+	<bean class="org.certificatic.spring.core.practica13.autowire.bean.WheelGroup"
+		autowire="byName" />
 
 	<!-- Define lista wheelList -->
+	<util:list id="wheelList" list-class="java.util.ArrayList">
+		<ref bean="wheel"/>
+		<ref bean="wheel"/>
+		<ref bean="wheel"/>
+		<ref bean="wheel"/>
+	</util:list>
 
 	<!-- Define bean wheel -->
+	<bean id="wheel" scope="prototype"
+		class="org.certificatic.spring.core.practica13.autowire.bean.Wheel" 
+		p:material="Caucho doble con spandex y PET" p:speedIndicator="250 75 Y"
+		p:rinSize="18" />
 
 </beans>
