@@ -9,5 +9,36 @@
 	<!-- Habilita configuración por anotaciones -->
 
 	<!-- Define beans requeridos -->
+	<!-- Habilita configuración por anotaciones -->
+	<context:annotation-config />
+
+	<!-- Define bean Reporter -->
+	<bean class="org.certificatic.spring.core.practica15.autowired.properties.bean.Reporter" autowire="byType"/>
+
+	<!-- Define bean Booklet -->
+	<bean class="org.certificatic.spring.core.practica15.autowired.properties.bean.Booklet">
+		<property name="brand" value="Patito"/>
+		<property name="size" value="10" />
+	</bean>
+
+	<!-- Define bean Pencil -->
+	<bean class="org.certificatic.spring.core.practica15.autowired.properties.bean.Pencil">
+		<property name="inkColor">
+			<util:constant static-field="java.awt.Color.RED"/>
+		</property>
+	</bean>
+
+	<!-- Define bean name y age -->
+	<bean class="java.lang.String">
+		<constructor-arg>
+			<value>Lara Croft</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean class="java.lang.Integer">
+		<constructor-arg>
+			<value>32</value>
+		</constructor-arg>
+	</bean>
 
 </beans>
