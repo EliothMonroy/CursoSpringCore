@@ -6,13 +6,25 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
 	<!-- Define bean clase Car -->
+	<bean class="org.certificatic.spring.core.practica13.autowire.bean.Car" autowire="byName"/>
+	<!-- Definimos los beans necesarios -->
 
-	<!-- Define bean engine -->
-
+	<!-- Define bean engine, se tienen que llamar igual los beans que los atributos de la clase -->
+	<bean id="engine" class="org.certificatic.spring.core.practica13.autowire.bean.Engine" p:model="modelo" p:serialNumber="12234" p:cylinderNumber="8"/>
+	
+	
 	<!-- Define bean wheelGroup -->
+	<bean id="wheelGroup" class="org.certificatic.spring.core.practica13.autowire.bean.WheelGroup" autowire="byName"/>
 
 	<!-- Define lista wheelList -->
+	<util:list id="wheelList" list-class="java.util.ArrayList">
+		<ref bean="wheel"/>
+		<ref bean="wheel"/>
+		<ref bean="wheel"/>
+		<ref bean="wheel"/>
+	</util:list>
 
 	<!-- Define bean wheel -->
+	<bean id="wheel" scope="prototype" class="org.certificatic.spring.core.practica13.autowire.bean.Wheel" p:material="Goma" p:rinSize="6" p:speedIndicator="250"/>
 
 </beans>
