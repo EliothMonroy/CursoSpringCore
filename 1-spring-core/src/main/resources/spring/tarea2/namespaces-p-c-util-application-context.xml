@@ -9,7 +9,7 @@
 
 	<bean
 		class="org.certificatic.spring.core.tarea2.namespaces.pcutil.bean.Persona"
-		p:nombre="Ivan García" p:auto-ref="autoBean" />
+		 p:nombre="Ivan García" p:auto-ref="autoBean" />
 
 	<bean id="autoBean"
 		class="org.certificatic.spring.core.tarea2.namespaces.pcutil.bean.Auto"

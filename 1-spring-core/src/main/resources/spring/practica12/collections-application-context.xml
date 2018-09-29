@@ -52,10 +52,38 @@
 				<prop key="mama">Maria</prop>
 			</props>
 		</property>
+		<property name="numbers">
+			<array>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</array>
+		</property>
+		<property name="notes">
+			<array>
+				<value>Nota 1</value>
+				<value>Nota 2</value>
+				<value>Nota 3</value>
+			</array>
+		</property>
+		
+		<!-- <property name="persons">
+			<set>
+				<ref bean="beanPerson"/>
+				
+				<bean class="org.certificatic.spring.core.practica12.collections.bean.Person">
+					<constructor-arg name="age" value="18"/>
+					<constructor-arg name="name" value="Pedroo"/>
+				</bean>
+			</set>
+		</property> -->
 		
 	</bean>
 	
-
+	<bean id="beanPerson" class="org.certificatic.spring.core.practica12.collections.bean.Person">
+		<property name="age" value="10"/>
+		<property name="name" value="Pedro"/>
+	</bean>
 
 	<bean name="telefonoPapa"
 		class="org.certificatic.spring.core.practica12.collections.bean.Phone">
