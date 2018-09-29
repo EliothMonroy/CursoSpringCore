@@ -16,9 +16,13 @@ public class Student {
 	// Inyectar
 	@Resource
 	private String enrollment;
-
+	
 	// Inyeactar
 	@Resource
+	private Subject mathematics;
+
+	// Inyeactar
+	@Resource(name="xyz")
 	private Subject subject;
 
 	// Inyeactar a mathematics subject
