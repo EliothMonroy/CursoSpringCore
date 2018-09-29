@@ -32,9 +32,8 @@ public class NumericalConverterTest {
 		log.info("numericalConverterTest -------------------");
 
 		// Obtener bean NumericalConverter
-		// realizar test con Asserts
-		
 		NumericalConverter converter=applicationContext.getBean(NumericalConverter.class);
+		// realizar test con Asserts
 		Assert.assertNotNull(converter);
 		
 		double number=Math.random()*999_999_999;
