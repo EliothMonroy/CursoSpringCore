@@ -5,9 +5,18 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 	<!-- Habilita configuración por anotaciones -->
+	<context:annotation-config />
 
 	<!-- Define bean Cameraman (okCameraman) -->
+	<bean id="okCameraman" scope="prototype" class="org.certificatic.spring.core.practica15.required.bean.Cameraman">
+		<property name="name" value="Lara Croft" />
+		<property name="age" value="20"/>
+		<property name="dni" value="10000"/>
+	</bean>
 
 	<!-- Define bean Cameraman (badCameraman) -->
+	<bean id="badCameraman" scope="prototype" class="org.certificatic.spring.core.practica15.required.bean.Cameraman">
+		
+	</bean>
 
 </beans>
