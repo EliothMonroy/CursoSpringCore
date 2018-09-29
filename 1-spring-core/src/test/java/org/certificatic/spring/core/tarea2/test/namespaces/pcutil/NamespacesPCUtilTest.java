@@ -28,17 +28,17 @@ public class NamespacesPCUtilTest {
 
 		log.info("collectionsTest -------------------");
 
-		Persona persona = applicationContext.getBean(Persona.class);
+		//Persona persona = applicationContext.getBean(Persona.class);
 
-		Assert.assertNotNull(persona);
+		//Assert.assertNotNull(persona);
 
-		log.info("persona: {}", persona);
+		//log.info("persona: {}", persona);
 
-		Circulo circulo = applicationContext.getBean(Circulo.class);
+		//Circulo circulo = applicationContext.getBean(Circulo.class);
 
-		Assert.assertNotNull(circulo);
+		//Assert.assertNotNull(circulo);
 
-		log.info("circulo: {}", circulo);
+		//log.info("circulo: {}", circulo);
 
 		Agenda agenda = applicationContext.getBean(Agenda.class);
 
@@ -46,11 +46,11 @@ public class NamespacesPCUtilTest {
 
 		log.info("agenda: {}", agenda);
 
-		MisProperties misProperties = applicationContext.getBean(MisProperties.class);
+		//MisProperties misProperties = applicationContext.getBean(MisProperties.class);
 
-		Assert.assertNotNull(misProperties);
+		//Assert.assertNotNull(misProperties);
 
-		log.info("misProperties: {}", misProperties);
+		//log.info("misProperties: {}", misProperties);
 
 		((AbstractApplicationContext) applicationContext).close();
 	}

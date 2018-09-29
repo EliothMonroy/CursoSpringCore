@@ -6,6 +6,10 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
 	<!-- Define bean Agenda -->
+	<bean class="org.certificatic.spring.core.tarea2.namespaces.pcutil.bean.Agenda">
+		<property name="notas" ref="listaNotasBean"/>
+	
+	</bean>
 
 	<bean
 		class="org.certificatic.spring.core.tarea2.namespaces.pcutil.bean.Persona"
@@ -14,7 +18,19 @@
 	<bean id="autoBean"
 		class="org.certificatic.spring.core.tarea2.namespaces.pcutil.bean.Auto"
 		c:marca="Seat" c:modelo-ref="modeloStringBean" />
+		
+	<bean id="modeloStringBean" class="java.lang.String">
+		<constructor-arg>
+			<value>Hola</value>
+		</constructor-arg>
+	</bean>
 
 	<!-- Define Beans al gusto usando p, c y util -->
+	
+	<util:list id="listaNotasBean">
+		<value>Una nota</value>
+		<value>Otra nota</value>
+		<value>Otra otra nota</value>
+	</util:list>
 
 </beans>
