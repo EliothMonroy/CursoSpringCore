@@ -4,6 +4,57 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Define bean clase AddressBook -->
+	<bean class="org.certificatic.spring.core.practica12.collections.bean.AddressBook">
+		<property name="addresses">
+			<list><!-- se puede usar set que si permite repetir -->
+				<ref bean="ivanDireccionBean"/>
+				<ref bean="ivanDireccionBean"/>
+				<ref bean="lauraDireccionBean"/>
+				<ref bean="lauraDireccionBean"/>
+				<ref bean="pedroDireccionBean"/>
+				<ref bean="pedroDireccionBean"/>
+				<bean 
+					class="org.certificatic.spring.core.practica12.collections.bean.Address">
+					<constructor-arg index="0" value="Xicotencatl" type="java.lang.String" />
+					<constructor-arg index="1" value="122" type="int" />
+					<constructor-arg index="2" value="7" type="java.lang.Integer" />
+					<property name="neighbor" value="Polanco" />
+				</bean>
+			</list>
+		</property>
+		<property name="phones">
+			<set>
+				<ref bean="telefonoPapa"/>
+				<ref bean="telefonoPapa"/>
+				<ref bean="telefonoPapa"/>
+				<ref bean="telefonoPapa"/>
+				<ref bean="telefonoMama"/>
+				<ref bean="telefonoMama"/>
+				<ref bean="telefonoMama"/>
+			</set>
+		</property>
+		<property name="emergencyNumbers">
+			<map>
+				<entry key="1" value="Bomberos: 001"></entry>
+				<entry key="2" value="Bomberos2: 002"></entry>
+				<entry key="3" value="Bomberos3: 003"></entry>
+				<entry key="4" value="Bomberos4: 004"></entry>
+				<entry key-ref="numero4">
+					<bean class="java.lang.String">
+						<constructor-arg value="IMSS"></constructor-arg>
+					</bean>
+				</entry>
+			</map>
+		</property>
+		<property name="family">
+			<props>
+				<prop key="papa">Juan</prop>
+				<prop key="mama">Maria</prop>
+			</props>
+		</property>
+		
+	</bean>
+	
 
 
 	<bean name="telefonoPapa"
