@@ -7,12 +7,30 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
 	<!-- Habilita configuración por anotaciones -->
+	<context:annotation-config />
 
 	<!-- Define bean Journalist -->
+	<bean 
+		class="org.certificatic.spring.core.practica15.autowired.setter.bean.Journalist" />
 
 	<!-- Define bean NoteBook -->
+	<bean 
+		class="org.certificatic.spring.core.practica15.autowired.setter.bean.NoteBook">
+		
+		<property name="brand" value="Magic notebook" />
+		<property name="size" value="A4" />
+		
+	</bean>
 
 	<!-- Define bean Pen -->
+	<bean 
+		class="org.certificatic.spring.core.practica15.autowired.setter.bean.Pen">
+		
+		<property name="inkColor">
+			<util:constant static-field="java.awt.Color.CYAN"/>
+		</property>
+		
+	</bean>
 
 	<bean class="java.lang.String">
 		<constructor-arg>

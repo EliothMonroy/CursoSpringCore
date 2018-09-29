@@ -7,7 +7,35 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
 	<!-- Habilita configuración por anotaciones -->
+	<context:annotation-config />
 
 	<!-- Define beans requeridos -->
+	<bean
+		class="org.certificatic.spring.core.practica15.autowired.properties.bean.Reporter" />
+
+	<bean
+		class="org.certificatic.spring.core.practica15.autowired.properties.bean.Booklet">
+		<property name="brand" value="History Class" />
+		<property name="size" value="Letter" />
+	</bean>
+
+	<bean
+		class="org.certificatic.spring.core.practica15.autowired.properties.bean.Pencil">
+		<property name="inkColor">
+			<util:constant static-field="java.awt.Color.YELLOW" />
+		</property>
+	</bean>
+
+	<bean class="java.lang.String">
+		<constructor-arg>
+			<value>Lara Croft</value>
+		</constructor-arg>
+	</bean>
+
+	<bean class="java.lang.Integer">
+		<constructor-arg>
+			<value>32</value>
+		</constructor-arg>
+	</bean>
 
 </beans>

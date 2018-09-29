@@ -7,13 +7,38 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
 	<!-- Habilita configuración por anotaciones -->
+	<context:annotation-config />
 
 	<!-- Define bean Engineer -->
+	<bean
+		class="org.certificatic.spring.core.practica15.autowired.constructor.bean.Engineer" />
 
 	<!-- Define bean Laptop -->
+	<bean
+		class="org.certificatic.spring.core.practica15.autowired.constructor.bean.Laptop">
+		<property name="brand" value="Lenovo" />
+		<property name="size" value="17 inch" />
+	</bean>
 
 	<!-- Define bean Stylus -->
+	<bean
+		class="org.certificatic.spring.core.practica15.autowired.constructor.bean.Stylus">
+		<property name="inkColor">
+			<util:constant static-field="java.awt.Color.YELLOW" />
+		</property>
+	</bean>
 
 	<!-- Define bean ?? y ?? -->
+	<bean class="java.lang.String">
+		<constructor-arg>
+			<value>Lara Croft</value>
+		</constructor-arg>
+	</bean>
+
+	<bean class="java.lang.Integer">
+		<constructor-arg>
+			<value>32</value>
+		</constructor-arg>
+	</bean>
 
 </beans>

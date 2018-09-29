@@ -7,8 +7,10 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
 	<!-- Habilita configuración por anotaciones -->
+	<context:annotation-config />
 
 	<!-- Define bean Airplane -->
+	<bean class="org.certificatic.spring.core.practica15.autowired.requiredFalse.qualifier.bean.Airplane" />
 
 	<bean id="airline1"
 		class="org.certificatic.spring.core.practica15.autowired.requiredFalse.qualifier.bean.Airline">

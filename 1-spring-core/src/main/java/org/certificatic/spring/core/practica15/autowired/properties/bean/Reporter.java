@@ -1,5 +1,7 @@
 package org.certificatic.spring.core.practica15.autowired.properties.bean;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
@@ -8,17 +10,21 @@ import lombok.Setter;
 public class Reporter {
 
 	// Inyectar
+	@Autowired
 	private @Setter(AccessLevel.NONE) String name;
 
 	// Inyectar
+	@Autowired
 	private @Setter(AccessLevel.NONE) Integer age;
 
 	private String dni;
 
 	// Inyectar
-	private @Setter(AccessLevel.NONE) Booklet notebook;
+	@Autowired
+	private @Setter(AccessLevel.NONE) Booklet booklet;
 
 	// Inyectar
-	private @Setter(AccessLevel.NONE) Pencil pen;
+	@Autowired
+	private @Setter(AccessLevel.NONE) Pencil pencil;
 
 }
