@@ -1,57 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Define bean clase AddressBook -->
+	<bean class="org.certificatic.spring.core.practica12.collections.bean.AddressBook">
+		<property name="addresses">
+			<list>
+				<ref bean="ivanDireccionBean" />
+				<ref bean="ivanDireccionBean" />
+				<ref bean="ivanDireccionBean" />
+
+				<ref bean="lauraDireccionBean" />
+				<ref bean="lauraDireccionBean" />
+				<ref bean="lauraDireccionBean" />
+
+				<ref bean="pedroDireccionBean" />
+				<ref bean="pedroDireccionBean" />
+				<ref bean="pedroDireccionBean" />
+
+				<bean class="org.certificatic.spring.core.practica12.collections.bean.Address">
+					<constructor-arg name="street" value="Mina" type="java.lang.String" />
+					<constructor-arg name="externalNumber" value="28" type="int" />
+					<constructor-arg name="internalNumber" value="101" type="java.lang.Integer" />
+					<property name="neighbor" value="Polanco"></property>
+				</bean>
+
+			</list>
+		</property>
+
+		<property name="phones">
+			<set>
+				<ref bean="telefonoPapa" />
+				<ref bean="telefonoPapa" />
+				<ref bean="telefonoMama" />
+				<ref bean="telefonoMama" />
+				<ref bean="telefonoHermanaMayor" />
+				<ref bean="telefonoHermanaMayor" />
+				<ref bean="telefonoHermanoMenor" />
+				<ref bean="telefonoHermanoMenor" />
+				<bean class="org.certificatic.spring.core.practica12.collections.bean.Phone">
+					<property name="number" value="234234-234234"></property>
+				</bean>
+			</set>
+		</property>
+		
+		<property name="emergencyNumbers">
+			<map>
+				<entry key="1" value="Bomberos: 060" />
+				<entry key="1" value="Bomberos: 070" />
+				<entry key="2" value="Policia: 040" />
+				<entry key="3">
+					<value>Proteccion civil: 020</value>
+				</entry>
+				<entry key-ref="numero4">
+					<bean class="java.lang.String">
+						<constructor-arg value="IMSS: 100" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+		
+		<property name="family">
+			<props>
+				<prop key="papa">Julio Preciado</prop>
+				<prop key="mama">Karla Amezcua</prop>
+				<prop key="hermanaMayor">Laura Pausini</prop>
+				<prop key="hermanoMayor">Carlos Costa</prop>
+				<prop key="hermanoMenor">Iker Emilio</prop>
+			</props>
+		</property>
+		
+		<property name="numbers">
+			<array>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+				<ref bean="numero4" />
+				<bean class="java.lang.Integer">
+					<constructor-arg value="5" />
+				</bean>
+			</array>
+		</property>
+		
+		<property name="notes" value="si,no,nel,pastel">
+			<!-- <array>
+				<value>Hola</value>
+				<value>mundo</value>
+				<value>cruel</value>
+				<value>!!</value>
+				<value>adios</value>
+			</array> -->
+		</property>
+		
+		<property name="persons">
+			<array>
+				<bean
+					class="org.certificatic.spring.core.practica12.collections.bean.Person">
+					<property name="name" value="Ivan" />
+					<property name="age" value="28" />
+				</bean>
+				<bean
+					class="org.certificatic.spring.core.practica12.collections.bean.Person">
+					<property name="name" value="Ivan" />
+					<property name="age" value="28" />
+				</bean>
+				<bean
+					class="org.certificatic.spring.core.practica12.collections.bean.Person">
+					<property name="name" value="Ivan" />
+					<property name="age" value="28" />
+				</bean>
+				<bean
+					class="org.certificatic.spring.core.practica12.collections.bean.Person">
+					<property name="name" value="Ivan" />
+					<property name="age" value="28" />
+				</bean>
+			</array>
+		</property>
+		
+	</bean>
 
 
-	<bean name="telefonoPapa"
-		class="org.certificatic.spring.core.practica12.collections.bean.Phone">
+	<bean name="telefonoPapa" class="org.certificatic.spring.core.practica12.collections.bean.Phone">
 		<property name="number" value="1111-2222"></property>
 	</bean>
 
-	<bean name="telefonoMama"
-		class="org.certificatic.spring.core.practica12.collections.bean.Phone">
+	<bean name="telefonoMama" class="org.certificatic.spring.core.practica12.collections.bean.Phone">
 		<property name="number" value="3333-4444"></property>
 	</bean>
 
-	<bean name="telefonoHermanaMayor"
-		class="org.certificatic.spring.core.practica12.collections.bean.Phone">
+	<bean name="telefonoHermanaMayor" class="org.certificatic.spring.core.practica12.collections.bean.Phone">
 		<property name="number" value="5555-6666"></property>
 	</bean>
 
-	<bean name="telefonoHermanoMenor"
-		class="org.certificatic.spring.core.practica12.collections.bean.Phone">
+	<bean name="telefonoHermanoMenor" class="org.certificatic.spring.core.practica12.collections.bean.Phone">
 		<property name="number" value="7777-8888"></property>
 	</bean>
 
-	<bean id="ivanDireccionBean"
-		class="org.certificatic.spring.core.practica12.collections.bean.Address">
+	<bean id="ivanDireccionBean" class="org.certificatic.spring.core.practica12.collections.bean.Address">
 		<constructor-arg index="0" value="Xicotencatl" type="java.lang.String" />
 		<constructor-arg index="1" value="122" type="int" />
 		<constructor-arg index="2" value="7" type="java.lang.Integer" />
 		<property name="neighbor" value="Del Valle" />
 	</bean>
 
-	<bean id="lauraDireccionBean"
-		class="org.certificatic.spring.core.practica12.collections.bean.Address">
-		<constructor-arg name="street" value="Av. Popocatepetl"
-			type="java.lang.String" />
-		<constructor-arg name="externalNumber" value="1504"
-			type="int" />
-		<constructor-arg name="internalNumber" value="1"
-			type="java.lang.Integer" />
+	<bean id="lauraDireccionBean" class="org.certificatic.spring.core.practica12.collections.bean.Address">
+		<constructor-arg name="street" value="Av. Popocatepetl" type="java.lang.String" />
+		<constructor-arg name="externalNumber" value="1504" type="int" />
+		<constructor-arg name="internalNumber" value="1" type="java.lang.Integer" />
 		<property name="neighbor" value="Chapultepec Morales"></property>
 	</bean>
 
-	<bean id="pedroDireccionBean"
-		class="org.certificatic.spring.core.practica12.collections.bean.Address">
-		<constructor-arg name="street" value="Hegel"
-			type="java.lang.String" />
+	<bean id="pedroDireccionBean" class="org.certificatic.spring.core.practica12.collections.bean.Address">
+		<constructor-arg name="street" value="Hegel" type="java.lang.String" />
 		<constructor-arg name="externalNumber" value="2" type="int" />
-		<constructor-arg name="internalNumber" value="10"
-			type="java.lang.Integer" />
+		<constructor-arg name="internalNumber" value="10" type="java.lang.Integer" />
 		<property name="neighbor" value="Pencil"></property>
 	</bean>
 
