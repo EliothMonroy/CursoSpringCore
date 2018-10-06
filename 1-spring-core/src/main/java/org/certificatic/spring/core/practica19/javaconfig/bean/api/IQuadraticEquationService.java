@@ -2,6 +2,7 @@ package org.certificatic.spring.core.practica19.javaconfig.bean.api;
 
 public interface IQuadraticEquationService {
 
+	// ax^2 + bx + c = 0  => (x1, x2)
 	QuadraticEquationResult solve(double a, double b, double c);
 
 	default String quadraticEquationToString(double a, double b, double c) {

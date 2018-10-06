@@ -1,6 +1,10 @@
 package org.certificatic.spring.core.practica19.test.javaconfig;
 
+import javax.annotation.Resource;
+import javax.inject.Inject;
+
 import org.apache.commons.math3.complex.Complex;
+import org.certificatic.spring.core.practica19.javaconfig.ApplicationConfig;
 import org.certificatic.spring.core.practica19.javaconfig.bean.DummyRepository;
 import org.certificatic.spring.core.practica19.javaconfig.bean.DummyService;
 import org.certificatic.spring.core.practica19.javaconfig.bean.QuadraticEquation;
@@ -10,41 +14,81 @@ import org.certificatic.spring.core.practica19.javaconfig.bean.api.QuadraticEqua
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 // Implementar run with spring-test
+@RunWith(SpringJUnit4ClassRunner.class)
 // cargar context configuration
+@ContextConfiguration(classes = ApplicationConfig.class)
 public class JavaConfigTest {
 
 	// Inyectar todas las dependencias
-
+	@Autowired
 	private ApplicationContext applicationContext;
 
+	@Inject
 	private IQuadraticEquationService quadraticService;
 
+	@Inject
 	private IQuadraticEquationService quadraticService2;
 
+	@Resource(name = "quadraticService2")
 	private IQuadraticEquationService quadraticService2x;
 
+	@Autowired
+	@Qualifier("quadraticEquationServiceBean")
 	private IQuadraticEquationService quadraticService2xx;
 
+	@Inject
 	private IQuadraticEquationService quadraticService3;
 
+	@Resource
 	private QuadraticEquation quadraticEquation;
 
+	@Inject
 	private DummyService dummyService;
 
+	@Resource(name = "dummyService2")
 	private DummyService dummyServiceBean;
 
+	@Resource
 	private DummyRepository dummyRepository;
+
+	@Inject
+	private DummyRepository dummyRepository2;
 
 	@Before
 	public void beforeClass() {
 		Assert.assertNotNull(applicationContext);
+		Assert.assertNotNull(quadraticService);
+		Assert.assertNotNull(quadraticService2);
+		Assert.assertNotNull(quadraticService2x);
+		Assert.assertNotNull(quadraticService2xx);
+		Assert.assertNotNull(quadraticService3);
+		Assert.assertNotNull(quadraticEquation);
+		Assert.assertNotNull(dummyService);
+		Assert.assertNotNull(dummyServiceBean);
+		Assert.assertNotNull(dummyRepository);
+		Assert.assertNotNull(dummyRepository2);
+
+		Assert.assertNotEquals(quadraticService, quadraticService2);
+
+		Assert.assertEquals(quadraticService2, quadraticService2x);
+		Assert.assertEquals(quadraticService2x, quadraticService2xx);
+		Assert.assertEquals(quadraticService2, quadraticService2xx);
+
+		Assert.assertSame(quadraticService2, quadraticService2x);
+		Assert.assertSame(quadraticService2x, quadraticService2xx);
+		Assert.assertSame(quadraticService2, quadraticService2xx);
 	}
 
 	@Test
@@ -159,18 +203,7 @@ public class JavaConfigTest {
 				.getBean("quadraticEquationServiceBean",
 						IQuadraticEquationService.class);
 
-		Assert.assertEquals(otherQuadraticService, quadraticService2);
-		Assert.assertEquals(otherQuadraticService, quadraticService2x);
-		Assert.assertEquals(otherQuadraticService, quadraticService2xx);
-		Assert.assertEquals(otherQuadraticService, quadraticService2xx);
-
-		Assert.assertSame(otherQuadraticService, quadraticService2);
-		Assert.assertSame(otherQuadraticService, quadraticService2x);
-		Assert.assertSame(otherQuadraticService, quadraticService2xx);
-		Assert.assertSame(otherQuadraticService, quadraticService2xx);
-
 		Assert.fail("This thes must have fail now.");
-
 	}
 
 	@Test

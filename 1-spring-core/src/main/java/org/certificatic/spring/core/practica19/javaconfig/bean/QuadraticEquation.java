@@ -1,9 +1,15 @@
 package org.certificatic.spring.core.practica19.javaconfig.bean;
 
+import javax.inject.Inject;
+
 import org.certificatic.spring.core.practica19.javaconfig.bean.api.IQuadraticEquationService;
 import org.certificatic.spring.core.practica19.javaconfig.bean.api.QuadraticEquationResult;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 // Define Bean prototype
+@Component
+@Scope("prototype")
 public class QuadraticEquation {
 
 	public enum QuadraticEquationValue {
@@ -15,6 +21,7 @@ public class QuadraticEquation {
 	private double c;
 
 	// Inyecta Dependencia
+	@Inject
 	private IQuadraticEquationService quadraticService;
 
 	public void setValue(double value, QuadraticEquationValue type) {
