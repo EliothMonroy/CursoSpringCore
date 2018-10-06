@@ -18,11 +18,11 @@ public class LiteralExpressionsTest_2 {
 
 		ExpressionParser spelParser = new SpelExpressionParser();
 
-		Expression spelExpression = spelParser.parseExpression("'Ivan García'");
+		Expression spelExpression = spelParser.parseExpression("'Ivan Garcia'");
 
 		String stringExpression = null; // obtener valor de la expresion
 
-		Assert.assertEquals("Ivan García", stringExpression);
+		Assert.assertEquals("Ivan Garcia", stringExpression);
 
 		log.info("stringExpression: {}", stringExpression);
 	}
