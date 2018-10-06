@@ -6,12 +6,17 @@
 
 	<!-- TODO 4. -->
 	<!-- Definir bean Resources -->
-
+	<bean class="org.certificatic.spring.core.practica20.resources.bean.Resources">
+		<property name="txtFile" value="file:/Users/eliothmonroy/Documents/Github/CursoSpringCore/my-text-file.txt"/>
+		<property name="imageFile" value="classpath:/spring/practica20/logo.png"/>
+		<property name="propertiesFile" value="classpath:/spring/practica20/my-properties.properties"/>
+		<property name="urlFile" value="https://spring.io"/>
+	</bean>
 
 
 	<!-- TODO 7. -->
 	<!-- Habilitar <context:component-scan /> -->
-
+	<context:component-scan base-package="org.certificatic.spring.core.practica20.resources.bean"/>
 
 
 	<!-- TODO 10. -->

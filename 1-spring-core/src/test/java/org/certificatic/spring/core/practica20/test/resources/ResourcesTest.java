@@ -1,18 +1,26 @@
 package org.certificatic.spring.core.practica20.test.resources;
 
 import org.certificatic.spring.core.practica20.resources.bean.Resources;
+import org.certificatic.spring.core.practica20.test.resources.utils.ResourcesTestUtils;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 // Implementar run with spring-test
+@RunWith(SpringJUnit4ClassRunner.class)
 // cargar context configuration
+@ContextConfiguration(ResourcesTest.location)
 public class ResourcesTest {
 
 	public static final String location = "classpath:/spring/practica20/resources-application-context.xml";
 
 	// Inyectar
+	@Autowired
 	private Resources resources;
 
 	@Test
@@ -22,6 +30,7 @@ public class ResourcesTest {
 				"loadTextFileClasspathXmlApplicationContextTest -------------------");
 
 		// loadTextFile
+		ResourcesTestUtils.loadTextFile(resources.getTxtFile());
 	}
 
 	@Test
@@ -31,6 +40,7 @@ public class ResourcesTest {
 				"loadPropertiesFileClasspathXmlApplicationContextTest -------------------");
 
 		// loadPropertiesFile
+		ResourcesTestUtils.loadPropertiesFile(resources.getPropertiesFile());
 	}
 
 	@Test
@@ -40,6 +50,7 @@ public class ResourcesTest {
 				"loadUrlFileClasspathXmlApplicationContextTest -------------------");
 
 		// loadURLFile
+		ResourcesTestUtils.loadURLFile(resources.getUrlFile());
 	}
 
 	@Test
@@ -49,5 +60,6 @@ public class ResourcesTest {
 				"loadAndCopyImageFileClasspathXmlApplicationContextTest -------------------");
 
 		// loadAndCopyImage
+		ResourcesTestUtils.loadAndCopyImage(resources.getImageFile(), "src/main/resources/spring/practica20/copy-classpath/");
 	}
 }

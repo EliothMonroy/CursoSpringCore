@@ -4,7 +4,7 @@ import org.certificatic.spring.core.practica19.javaconfig.bean.DummyRepository;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
-//Habilitar Clase de configuraci�n
+//Habilitar Clase de configuración
 @Configuration
 //Agregar Import de clases de Recurso xml
 @ImportResource(locations=("classpath:/spring/practica19/datasource-application-context.xml"))
