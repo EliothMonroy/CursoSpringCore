@@ -60,6 +60,6 @@ public class ResourcesTest {
 				"loadAndCopyImageFileClasspathXmlApplicationContextTest -------------------");
 
 		// loadAndCopyImage
-		ResourcesTestUtils.loadAndCopyImage(resources.getImageFile(), "src/main/resources/spring/practica20/copy-classpath/");
+		ResourcesTestUtils.loadAndCopyImage(resources.getImageFile(), "src/main/resources/spring/practica20/copy-resources/");
 	}
 }
