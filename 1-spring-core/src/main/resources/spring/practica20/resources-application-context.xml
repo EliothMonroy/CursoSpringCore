@@ -1,46 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
 	<!-- TODO 4. -->
 	<!-- Definir bean Resources -->
-	<bean 
-		class="org.certificatic.spring.core.practica20.resources.bean.Resources">
-	
-		<property name="txtFile" 
-			value="file:/Users/xvhx/certificatic-resources/my-text-file.txt" />
-		<!-- 
-		<property name="imageFile" 
+	<bean class="org.certificatic.spring.core.practica20.resources.bean.Resources">
+
+		<property name="txtFile" value="file:/Users/xvhx/certificatic-resources/my-text-file.txt" />
+		<!--
+			<property name="imageFile"
 			value="classpath:/spring/practica20/logo.png" /> -->
-		
-		<property name="imageFile" 
-			value="file:src/main/resources/spring/practica20/logo.png" />
-			
-		<property name="propertiesFile" 
-			value="classpath:spring/practica20/my-properties.properties" />
-			
+
+		<property name="imageFile" value="file:src/main/resources/spring/practica20/logo.png" />
+
+		<property name="propertiesFile" value="classpath:spring/practica20/my-properties.properties" />
+
 		<property name="urlFile" value="https://spring.io/" />
-		
+
 	</bean>
 
 
 
 	<!-- TODO 7. -->
 	<!-- Habilitar <context:component-scan /> -->
-	<context:component-scan 
-		base-package="org.certificatic.spring.core.practica20.resources.bean" />
+	<context:component-scan base-package="org.certificatic.spring.core.practica20.resources.bean" />
 
 
 
 	<!-- TODO 10. -->
-	<!-- Definir PropertyPlaceholderConfigurer -->
+	<!-- Definir PropertyPlaceholderConfigurer 
+	<bean 
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+
+		<property name="locations">
+			<list>
+				<value>classpath:/spring/practica20/*-props.properties</value>
+				<value>classpath:/spring/practica20/app.properties</value>
+			</list>
+		</property>
+		
+		<property name="properties">
+			<props>
+				<prop key="favourite.rockband.first">Guns n' Roses</prop>
+				<prop key="favourite.rockband.second">AC/DC</prop>
+			</props>
+		</property>
+	</bean>
+	-->
+
 
 
 
 	<!-- TODO 12 - Bonus. -->
 	<!-- Definir <context:property-placeholder/> y <util:properties /> -->
+	
+	<context:property-placeholder 
+					location="classpath:/spring/practica20/*-props.properties,
+								classpath:/spring/practica20/app.properties" 
+					properties-ref="misProperties"/>
+					
+	<util:properties id="misProperties">
+		<prop key="favourite.rockband.first">Guns n' Roses</prop>
+		<prop key="favourite.rockband.second">AC/DC</prop>
+	</util:properties>
 
 
 

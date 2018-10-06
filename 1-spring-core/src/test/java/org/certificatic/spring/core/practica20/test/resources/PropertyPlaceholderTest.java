@@ -3,24 +3,33 @@ package org.certificatic.spring.core.practica20.test.resources;
 import org.certificatic.spring.core.practica20.resources.bean.FavouriteRockBands;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 // Implementar run with spring-test
+@RunWith(SpringJUnit4ClassRunner.class)
 // cargar context configuration
+@ContextConfiguration(PropertyPlaceholderTest.location)
 public class PropertyPlaceholderTest {
 
 	public static final String location = "classpath:/spring/practica20/resources-application-context.xml";
 
 	// Inyectar
+	// @Autowired
+	@Value("#{ @favouriteRockBands }")
 	private FavouriteRockBands rockbands;
 
 	// Inyectar property service.name
+	@Value("${service.name}")
 	private String serviceName;
 
 	// Inyectar property service.description
+	@Value("${service.description}")
 	private String serviceDescription;
 
 	// Inyectar property datasource.name
@@ -28,12 +37,15 @@ public class PropertyPlaceholderTest {
 	private String datasourceName;
 
 	// Inyectar property datasource.description
+	@Value("${datasource.description}")
 	private String datasourceDescription;
 
 	// Inyectar property app.name
+	@Value("${app.name}")
 	private String appName;
 
 	// Inyectar property app.description
+	@Value("${app.description}")
 	private String appDescription;
 
 	@Test
