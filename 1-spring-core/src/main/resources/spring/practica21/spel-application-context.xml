@@ -6,15 +6,15 @@
 
 	<!-- TODO 3. -->
 	<!-- Define el valor de randomNumber con SpEL -->
-	<bean id="gessNumberBean"
+	<bean id="guessNumberBean"
 		class="org.certificatic.spring.core.practica21.spel.bean.GuessNumber">
-		<property name="randomNumber" value="" />
+		<property name="randomNumber" value="#{ T(java.lang.Math).random() * 100.00 }" />
 	</bean>
 
 	<!-- TODO 3. -->
 	<!-- Define el valor de initialNumber igual a randomNumber del bean GuessNumber -->
 	<bean class="org.certificatic.spring.core.practica21.spel.bean.Magician">
-		<property name="initialNumber" value="" />
+		<property name="initialNumber" value="#{ guessNumberBean.randomNumber }" />
 	</bean>
 
 
