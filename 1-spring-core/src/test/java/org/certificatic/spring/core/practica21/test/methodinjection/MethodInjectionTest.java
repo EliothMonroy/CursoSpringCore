@@ -30,8 +30,10 @@ public class MethodInjectionTest {
 		Assert.assertNotNull(singletonBean2);
 
 		// valida que los singletonBean 1 y 2 son los mismos
+		Assert.assertSame(singletonBean1, singletonBean2);
 
 		// valida que los prototypes en cada singletonBean 1 y 2 son distintos
+		Assert.assertNotSame(singletonBean1.getProcessor(), singletonBean2.getProcessor());
 	}
 
 	@Test
@@ -43,9 +45,7 @@ public class MethodInjectionTest {
 				+ ">atad-ym/<... atad erom ,atad erom ,ataD>atad-ym<\n"
 				+ ">atad-ym/<... atad erom ,atad erom ,ataD>atad-ym<";
 
-		String data = null;
-
-		data = singletonBean1
+		String data = singletonBean1
 				.process("<my-data>Data, more data, more data ...</my-data>");
 		Assert.assertNotNull(data);
 		Assert.assertEquals(dataExpected, data);

@@ -4,10 +4,21 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
+	<context:annotation-config />
+	
 	<!-- TODO 4. Method injection -->
 	<!-- Define SingletonBean para inyectar prototype -->
+	<bean scope="singleton"
+		class="org.certificatic.spring.core.practica21.methodinjection.bean.SingletonBean">
+	
+		<lookup-method name="getProcessor" bean="stringProcessor"/>
+		
+	</bean>
+	
 
 	<!-- TODO 5. Method injection -->
 	<!-- Define Bean Prototype StringProcessor a inyectar en SingletonBean -->
+	<bean id="stringProcessor" scope="prototype"
+		class="org.certificatic.spring.core.practica21.methodinjection.bean.api.impl.StringProcessor" />
 
 </beans>
