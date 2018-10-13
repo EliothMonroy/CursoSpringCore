@@ -36,32 +36,34 @@ public class TemplatingExpressionsTest_9 {
 
 		log.info("templatingExpressionsTest -------------------");
 
-		springContext.setVariable("name", "Ivan García");
+		springContext.setVariable("name", "Ivan Garcia");
 
-		String greeting = spelParser.parseExpression("Hi #{ #name +' '+'you''re' } awesome!", new TemplateParserContext())
-				.getValue(springContext,String.class); // sólo analiza
+		String greeting = spelParser
+				.parseExpression("Hi #{ #name +' '+'you''re' } awesome!", new TemplateParserContext())
+				.getValue(springContext, String.class); // sï¿½lo analiza
 
 		Assert.assertNotNull(greeting);
-		
-		Assert.assertEquals("Hi Ivan García you're awesome!", greeting);
-		
+
+		Assert.assertEquals("Hi Ivan Garcia you're awesome!", greeting);
+
 		log.info("greeting: {}", greeting);
 	}
-	
+
 	@Test
 	public void templatingExpressionsTest2() {
 
 		log.info("templatingExpressionsTest2 -------------------");
 
-		springContext.setVariable("name", "Ivan García");
+		springContext.setVariable("name", "Ivan Garcia");
 
-		String greeting = spelParser.parseExpression("Hi %[[ #name +' '+'you''re' ]] awesome!", new TemplateParserContext("%[[","]]"))
-				.getValue(springContext,String.class); // sólo analiza
+		String greeting = spelParser
+				.parseExpression("Hi %[[ #name +' '+'you''re' ]] awesome!", new TemplateParserContext("%[[", "]]"))
+				.getValue(springContext, String.class); // sï¿½lo analiza
 
 		Assert.assertNotNull(greeting);
-		
-		Assert.assertEquals("Hi Ivan García you're awesome!", greeting);
-		
+
+		Assert.assertEquals("Hi Ivan Garcia you're awesome!", greeting);
+
 		log.info("greeting: {}", greeting);
 	}
 

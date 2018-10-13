@@ -5,7 +5,7 @@ import java.util.GregorianCalendar;
 
 import org.certificatic.spring.core.practica21.spel.model.Inventor;
 import org.certificatic.spring.core.practica21.spel.model.PlaceOfBirth;
-import org.certificatic.spring.core.practica21.test.spel.model.stub.SocietyStub;
+import org.certificatic.spring.core.practica21.spel.model.SocietyStub;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -39,34 +39,35 @@ public class AssignmentTypesConstructorExpressionsTest_6 {
 		log.info("assignmentExpressionsTest -------------------");
 
 		String teslaNameExpected = "Nikola Tesla";
-		
+
 		String teslaNameAfterChangeExpected = "Nikolai";
 
 		String teslaName1 = spelParser.parseExpression("name").getValue(teslaContext, String.class);
-		
+
 		Assert.assertEquals(teslaNameExpected, teslaName1);
-		
+
 		log.info("teslaName1: {}", teslaName1);
 
 		// -------------------------------------
 
-		spelParser.parseExpression("name").setValue(teslaContext, "Nikolai"); // s髄o analizar
+		spelParser.parseExpression("name").setValue(teslaContext, "Nikolai"); // s贸lo analizar
 
 		String teslaName2 = spelParser.parseExpression("name").getValue(teslaContext, String.class);
-		
+
 		Assert.assertNotEquals(teslaNameExpected, teslaName2);
-		
+
 		Assert.assertEquals(teslaNameAfterChangeExpected, teslaName2);
-		
+
 		log.info("teslaName2: {}", teslaName2);
 
 		// -------------------------------------
 
-		// definir una expresi髇 que asigne y obtenga a la vez el nombre 'Nikola Tesla' sobre el nombre del Inventor Tesla
-		String teslaName3 = spelParser.parseExpression(null).getValue(teslaContext, String.class);
-		
+		// definir una expresi贸n que asigne y obtenga a la vez el nombre 'Nikola Tesla' sobre el nombre del Inventor Tesla
+		String teslaName3 = spelParser.parseExpression(
+				"name = 'Nikola Tesla'").getValue(teslaContext, String.class);
+
 		Assert.assertEquals(teslaNameExpected, teslaName3);
-		
+
 		log.info("teslaName3: {}", teslaName3);
 	}
 
@@ -75,19 +76,20 @@ public class AssignmentTypesConstructorExpressionsTest_6 {
 
 		log.info("typesExpressionsTest -------------------");
 
-		Class<?> dateClass = spelParser.parseExpression("T(java.util.Date)").getValue(Class.class); // s髄o analizar
-		
+		Class<?> dateClass = spelParser.parseExpression("T(java.util.Date)").getValue(Class.class); // s贸lo analizar
+
 		Assert.assertEquals(Date.class, dateClass);
 
-		// definir una expresi髇 que calcule el 醨ea de un circulo de 5.5 de radio (multiplicar y dividir por 1000.0 para truncar decimales
-		Double circleArea = spelParser.parseExpression(null).getValue(Double.class);
+		// definir una expresi贸n que calcule el 谩rea de un circulo de 5.5 de radio (multiplicar y dividir por 1000.0 para truncar decimales
+		Double circleArea = spelParser.parseExpression(
+				"T(Math).round(T(Math).PI * T(Math).pow('5.5','2') * 10000.0 ) / 10000.0").getValue(Double.class);
 
 		Assert.assertEquals(95.0332D, circleArea, 0.0001);
-		
+
 		// -------------------------------------
 
-		Double doubleNumber = spelParser.parseExpression("T(Double).valueOf('95.0332')").getValue(Double.class); // s髄o analizar
-		
+		Double doubleNumber = spelParser.parseExpression("T(Double).valueOf('95.0332')").getValue(Double.class); // s锟絣o analizar
+
 		Assert.assertEquals(95.0332D, doubleNumber, 0.0001);
 	}
 
@@ -97,40 +99,43 @@ public class AssignmentTypesConstructorExpressionsTest_6 {
 		log.info("contructorExpressionsTest -------------------");
 
 		double number = spelParser.parseExpression("1D").getValue(double.class);
-		
+
 		Assert.assertEquals(1, number, 0.0001);
-		
+
 		log.info("number: {}", number);
 
 		// -------------------------------------
 
 		GregorianCalendar c = spelParser.parseExpression("new java.util.GregorianCalendar()")
-				.getValue(GregorianCalendar.class); // s髄o analizar
-		
+				.getValue(GregorianCalendar.class); // s贸lo analizar
+
 		c.set(1879, 3, 14);
 
 		StandardEvaluationContext context = new StandardEvaluationContext();
-		
+
 		context.setVariable("birthday", c);
 
-		// definir y obtener el valor de una expresi髇 que obtenga el valor (objeto) de un Inventor cuyos datos sean:
+		// definir y obtener el valor de una expresi贸n que obtenga el valor (objeto) de un Inventor cuyos datos sean:
 		// nombre: 'Albert Einstein', fecha de nacimiento: (la fecha definida en c) y nacionalidad: 'German'
-		Inventor inventor = spelParser.parseExpression(null).getValue(context, Inventor.class);
+		Inventor inventor = spelParser.parseExpression(
+				"new org.certificatic.spring.core.practica21.spel.model.Inventor("
+				+ "'Albert Einstein', #birthday.getTime(), 'German')").getValue(context, Inventor.class);
 
-		// definir y obtener el valor de una expresi髇 que obtenga un arreglo de strings cuyos valores sean:
+		// definir y obtener el valor de una expresi贸n que obtenga un arreglo de strings cuyos valores sean:
 		// 'absorption refrigerator', 'quantum theory', 'theory of general relativity'
-		String[] stringArray = spelParser.parseExpression(null).getValue(String[].class);
+		String[] stringArray = spelParser.parseExpression(
+				"new String[]{'absorption refrigerator', 'quantum theory', 'theory of general relativity'}").getValue(String[].class);
 
 		inventor.setInventions(stringArray);
 
 		PlaceOfBirth placeOfBirth = spelParser.parseExpression(
 				"T(org.certificatic.spring.core.practica21.spel.model.PlaceOfBirth).builder().country('Germany').build()")
-				.getValue(PlaceOfBirth.class); // s髄o analizar
+				.getValue(PlaceOfBirth.class); // s贸lo analizar
 
 		inventor.setPlaceOfBirth(placeOfBirth);
 
 		Inventor einstein = spelParser.parseExpression("getMember('Albert Einstein')").getValue(
-				societyContext, Inventor.class); // s髄o analizar
+				societyContext, Inventor.class); // s贸lo analizar
 
 		Assert.assertEquals(einstein, inventor);
 

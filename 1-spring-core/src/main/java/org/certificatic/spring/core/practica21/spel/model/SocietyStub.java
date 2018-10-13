@@ -1,14 +1,10 @@
-package org.certificatic.spring.core.practica21.test.spel.model.stub;
+package org.certificatic.spring.core.practica21.spel.model;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.certificatic.spring.core.practica21.spel.model.Inventor;
-import org.certificatic.spring.core.practica21.spel.model.PlaceOfBirth;
-import org.certificatic.spring.core.practica21.spel.model.Society;
 
 public class SocietyStub {
 

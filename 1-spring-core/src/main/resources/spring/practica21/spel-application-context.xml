@@ -20,12 +20,18 @@
 
 	<!-- TODO 13. -->
 	<!-- Define Bean MyBeanResolver -->
+	<bean class="org.certificatic.spring.core.practica21.spel.bean.MyBeanResolver" />
 
 	<!-- TODO 13. -->
 	<!-- Define el Bean Inventor name teslaBean usa factory bean y factory method -->
+	<bean id="teslaBean" 
+		  class="org.certificatic.spring.core.practica21.spel.model.Inventor"
+		  factory-bean="societyStub"
+		  factory-method="createInventorTesla" />
 
 	<!-- TODO 13. -->
 	<!-- Define Bean SocietyStub -->
+	<bean id="societyStub" class="org.certificatic.spring.core.practica21.spel.model.SocietyStub" />
 
 
 </beans>
