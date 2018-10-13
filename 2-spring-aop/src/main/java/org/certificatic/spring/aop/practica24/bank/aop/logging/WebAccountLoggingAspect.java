@@ -1,6 +1,7 @@
 package org.certificatic.spring.aop.practica24.bank.aop.logging;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.Before;
 import org.certificatic.spring.aop.practica24.bank.app.model.Account;
 import org.certificatic.spring.aop.util.Color;
 import org.certificatic.spring.aop.util.bean.api.IColorWriter;
@@ -22,7 +23,8 @@ public class WebAccountLoggingAspect implements Ordered {
 	private IColorWriter colorWriter;
 
 	// Define Advice Before que intercepte webLayer() y cache los argumentos
-	// (la cuenta debe especificar como nombre de par·metro "cuenta")
+	// (la cuenta debe especificar como nombre de par√°metro "cuenta")
+	@Before(value="org.certificatic.spring.aop.practica24.bank.aop.PointcutDefinition.webLayer() && args(cuenta, ..)", argNames="cuenta")
 	public void beforeAccountMethodExecutionAccount(JoinPoint jp, Account acc) {
 
 		log.info("{}",
@@ -34,7 +36,8 @@ public class WebAccountLoggingAspect implements Ordered {
 	}
 
 	// Define Advice Before que intercepte webLayer() y cache los argumentos
-	// (el customer Id debe especificar como nombre de par·metro "id")
+	// (el customer Id debe especificar como nombre de par√°metro "id")
+	@Before(value="org.certificatic.spring.aop.practica24.bank.aop.PointcutDefinition.webLayer() && args(id, ..)", argNames="id")
 	public void beforeAccountMethodExecutionLong(JoinPoint jp, Long numberId) {
 
 		log.info("{}",
