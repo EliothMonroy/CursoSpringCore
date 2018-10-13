@@ -14,8 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(
-		locations = "classpath:/spring/practica22/partido-sin-aop-application-context.xml")
+@ContextConfiguration(locations = "classpath:/spring/practica22/partido-sin-aop-application-context.xml")
 public class PartidoSpringNoAopXmlTest {
 
 	@Value("#{jugadorBean}")
@@ -54,7 +53,7 @@ public class PartidoSpringNoAopXmlTest {
 			audiencia.gritaGol();
 
 		} catch (Throwable e) {
-			log.info("excepci髇: " + e.getMessage());
+			log.info("excepci贸n: " + e.getMessage());
 
 			audiencia.abuchear();
 			audiencia.abuchear();
@@ -70,7 +69,7 @@ public class PartidoSpringNoAopXmlTest {
 			audiencia.gritaGol();
 
 		} catch (Throwable e) {
-			log.info("excepci髇: " + e.getMessage());
+			log.info("excepci贸n: " + e.getMessage());
 
 			audiencia.abuchear();
 			audiencia.abuchear();
@@ -93,7 +92,7 @@ public class PartidoSpringNoAopXmlTest {
 			audiencia.aplaudir();
 
 		} catch (Throwable e) {
-			log.info("excepci髇: " + e.getMessage());
+			log.info("excepci贸n: " + e.getMessage());
 		}
 
 		log.info("------------");
@@ -107,7 +106,7 @@ public class PartidoSpringNoAopXmlTest {
 			audiencia.aplaudir();
 
 		} catch (Throwable e) {
-			log.info("excepci髇: " + e.getMessage());
+			log.info("excepci贸n: " + e.getMessage());
 		}
 
 		log.info("------------");
