@@ -20,6 +20,7 @@
 
 	<!-- TODO 13. -->
 	<!-- Define Bean MyBeanResolver -->
+	<bean class="org.certificatic.spring.core.practica21.spel.bean.MyBeanResolver"></bean>
 
 	<!-- TODO 13. -->
 	<!-- Define el Bean Inventor name teslaBean usa factory bean y factory method -->
