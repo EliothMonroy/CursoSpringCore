@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -17,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 public class PartidoSpringAopXmlTest {
 
 	// Injecta Jugador Bean
+	@Autowired
 	private IJugador jugador;
 
 	@Before
@@ -40,7 +42,7 @@ public class PartidoSpringAopXmlTest {
 		try {
 			jugador.cobrarPenal(true);
 		} catch (Throwable e) {
-			log.info("excepci髇: " + e.getMessage());
+			log.info("excepci贸n: " + e.getMessage());
 
 		}
 		log.info("------------");
@@ -48,7 +50,7 @@ public class PartidoSpringAopXmlTest {
 		try {
 			jugador.cobrarPenal(false);
 		} catch (Throwable e) {
-			log.info("excepci髇: " + e.getMessage());
+			log.info("excepci贸n: " + e.getMessage());
 		}
 		log.info("------------");
 
@@ -60,14 +62,14 @@ public class PartidoSpringAopXmlTest {
 			jugador.tirarAGol(false);
 
 		} catch (Throwable e) {
-			log.info("excepci髇: " + e.getMessage());
+			log.info("excepci贸n: " + e.getMessage());
 		}
 		log.info("------------");
 
 		try {
 			jugador.tirarAGol(true);
 		} catch (Throwable e) {
-			log.info("excepci髇: " + e.getMessage());
+			log.info("excepci贸n: " + e.getMessage());
 		}
 		log.info("------------");
 

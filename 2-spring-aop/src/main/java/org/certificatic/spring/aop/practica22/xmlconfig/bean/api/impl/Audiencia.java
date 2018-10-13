@@ -4,50 +4,54 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.certificatic.spring.aop.practica22.xmlconfig.bean.api.IAudiencia;
 import org.certificatic.spring.aop.util.Color;
 import org.certificatic.spring.aop.util.bean.api.IColorWriter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 // Define Bean Audiencia
+@Component("audienciaBean")
 public class Audiencia implements IAudiencia {
 
 	// Inyecta IColorWriter
+	@Autowired
 	private IColorWriter colorWriter;
 
 	@Override
 	public void aplaudir() {
 		print(colorWriter.getColoredMessage(Color.BLUE,
-				"[Aspecto Audiencia] El público aplaude... clap, clap, clap...."));
+				"[Aspecto Audiencia] El pÃºblico aplaude... clap, clap, clap...."));
 	}
 
 	@Override
 	public void abuchear() {
 		print(colorWriter.getColoredMessage(Color.RED,
-				"[Aspecto Audiencia] El público abuchea... buuuuuuuuuuuu...."));
+				"[Aspecto Audiencia] El pÃºblico abuchea... buuuuuuuuuuuu...."));
 	}
 
 	@Override
 	public void sePoneDePie() {
 		print(colorWriter.getColoredMessage(Color.YELLOW,
-				"[Aspecto Audiencia] El público se pone de pie."));
+				"[Aspecto Audiencia] El pÃºblico se pone de pie."));
 	}
 
 	@Override
 	public void seSienta() {
 		print(colorWriter.getColoredMessage(Color.YELLOW,
-				"[Aspecto Audiencia] El público se sienta en su lugar."));
+				"[Aspecto Audiencia] El pÃºblico se sienta en su lugar."));
 	}
 
 	@Override
 	public void gritaGol() {
 		print(colorWriter.getColoredMessage(Color.GREEN,
-				"[Aspecto Audiencia] El público grita gol... GOOOOOOOOOOOOOOOOOOOOOOOOL !!!!"));
+				"[Aspecto Audiencia] El pÃºblico grita gol... GOOOOOOOOOOOOOOOOOOOOOOOOL !!!!"));
 	}
 
 	@Override
 	public void gritaOle() {
 		print(colorWriter.getColoredMessage(Color.MAGENTA,
-				"[Aspecto Audiencia] El público grita Ole... Ooooooleeeeeee..."));
+				"[Aspecto Audiencia] El pÃºblico grita Ole... Ooooooleeeeeee..."));
 	}
 
 	private void print(String mensaje) {
@@ -58,14 +62,14 @@ public class Audiencia implements IAudiencia {
 	public Object sePoneDeNervios(ProceedingJoinPoint pjp) throws Throwable {
 
 		print(colorWriter.getColoredMessage(Color.CYAN,
-				"[Aspecto Audiencia] El público se pone de nervios"));
+				"[Aspecto Audiencia] El pÃºblico se pone de nervios"));
 
 		Object o = null;
 
-		// Implementa método "se pone de nervios"
+		// Implementa mï¿½todo "se pone de nervios"
 
 		print(colorWriter.getColoredMessage(Color.CYAN,
-				"[Aspecto Audiencia] El público se deja de pone de nervios"));
+				"[Aspecto Audiencia] El pÃºblico se deja de pone de nervios"));
 
 		return o;
 	}
