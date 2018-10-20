@@ -7,9 +7,38 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 	<!-- cargar property-placeholder mysql-jdbc.properties -->
+	<context:property-placeholder ignore-unresolvable="true" order="1"
+			location="classpath:/spring/properties/mysql-jdbc.properties"/>
 
 	<!-- cargar property-placeholder c3p0-pooled-datasource.properties -->
+	<context:property-placeholder ignore-unresolvable="true" order="2"
+			location="classpath:/spring/properties/c3p0-pooled-datasource.properties"/>
 
 	<!-- definir datasource com.mchange.v2.c3p0.ComboPooledDataSource -->
+	<bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+
+		<property name="driverClass" value="${db.driverClassName}" />
+		<property name="jdbcUrl" value="${db.url}" />
+		<property name="user" value="${db.user}" />
+		<property name="password" value="${db.pass}" />
+		
+		<property name="maxPoolSize" value="${c3p0.maxPoolSize}" />
+		<property name="minPoolSize" value="${c3p0.minPoolSize}" />
+		<property name="maxStatements" value="${c3p0.maxStatements}" />
+		<property name="testConnectionOnCheckout" value="${c3p0.testConnection}" />
+	</bean>
+	
+	<!-- 
+		db.driverClassName=com.mysql.jdbc.Driver
+		db.url=jdbc:mysql://localhost:3306/curso-spring
+		db.user=root
+		db.pass=root
+		
+		c3p0.maxPoolSize=50
+		c3p0.minPoolSize=10
+		c3p0.maxStatements=100
+		c3p0.testConnection=true
+	 -->
 	
 </beans>

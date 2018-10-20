@@ -7,7 +7,24 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 	<!-- cargar property-placeholder h2-jdbc.properties -->
+	<context:property-placeholder 
+					location="classpath:/spring/properties/h2-jdbc.properties"/>
 
 	<!-- definir datasource org.apache.commons.dbcp.BasicDataSource -->
+	<bean id="datasource" destroy-method="close" 
+		class="org.apache.commons.dbcp.BasicDataSource">
+		
+		<property name="driverClassName" value="${db.driverClassName}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.user}" />
+		<property name="password" value="${db.pass}" />
+		
+	</bean>
+	
+	<!-- 	db.driverClassName=org.h2.Driver
+			db.url=jdbc:h2:tcp://localhost/data/curso-spring
+			db.user=sa
+			db.pass= 
+	-->
 
 </beans>
