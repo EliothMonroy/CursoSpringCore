@@ -40,8 +40,14 @@
 		<aop:aspect ref="webAccountLoggingAspect">
 
 			<!-- completar advice before de método beforeAccountMethodExecutionAccount -->
+			<aop:before pointcut="within(org.certificatic.spring.aop.practica24.bank.web..*) and args(cuenta, ..)" 
+					arg-names="cuenta"
+					method="beforeAccountMethodExecutionAccount"/>
 
 			<!-- completar advice before de método beforeAccountMethodExecutionLong -->
+			<aop:before pointcut="within(org.certificatic.spring.aop.practica24.bank.web..*) and args(id, ..)" 
+					arg-names="id"
+					method="beforeAccountMethodExecutionLong"/>
 
 
 		</aop:aspect>
@@ -50,17 +56,34 @@
 
 			<!-- 1. completar pointcut (Account) within(org.certificatic.spring.aop.practica24.bank.dao..*) 
 				and args(yy, ..) -->
+			<aop:pointcut expression="within(org.certificatic.spring.aop.practica24.bank.dao..*) 
+				and args(yy, ..)" id="ejecucionDaoQueRecibeUnAccount"/>
 			<!-- 2. completar advice before para pointcut definido anteriormente (Account) -->
+			<aop:before pointcut-ref="ejecucionDaoQueRecibeUnAccount"
+				 method="beforeDAOAccountMethodExecutionAccount"/>
 
 
 			<!-- 1. completar pointcut (Long) within(org.certificatic.spring.aop.practica24.bank.dao..*) 
 				and args(bb, ..) -->
+			<aop:pointcut expression="within(org.certificatic.spring.aop.practica24.bank.dao..*) 
+				and args(bb, ..)" id="ejecucionDaoQueRecibeUnLong"/>
 			<!-- 2. completar advice before para pointcut definido anteriormente (Long) -->
+			<aop:before pointcut-ref="ejecucionDaoQueRecibeUnLong" 
+				method="beforeDAOAccountMethodExecutionLong"/>
 
 
 		</aop:aspect>
 
 		<!-- Define aspecto profilingAspect -->
+		<aop:aspect ref="profilingAspect">
+		
+			<aop:pointcut expression="within(org.certificatic.spring.aop.practica24.bank..*)
+				 and args(obj, ..)" id="aroundCualquierMetodoDelPaqueteBank"/>
+				
+			<aop:around pointcut-ref="aroundCualquierMetodoDelPaqueteBank" 
+						method="beforeAccountMethodExecutionAccount"/>
+		
+		</aop:aspect>
 
 	</aop:config>
 
