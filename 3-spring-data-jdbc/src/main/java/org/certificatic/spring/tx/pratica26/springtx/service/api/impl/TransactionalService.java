@@ -6,12 +6,16 @@ import org.certificatic.spring.tx.util.Color;
 import org.certificatic.spring.tx.util.bean.api.IColorWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
 // Habilitar Trasnactional con aislamiento read commited y propagacion required
+@Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED)
 public class TransactionalService implements ITransactionalService {
 
 	@Autowired
@@ -19,6 +23,7 @@ public class TransactionalService implements ITransactionalService {
 
 	@Override
 	// Habilitar Trasnactional read only
+	@Transactional(readOnly = true)
 	public BusinessObject getBusinessObject(Long id) {
 		log.info("{}", colorWriter.getColoredMessage(Color.BLUE,
 				"inside getBusinessObject"));
