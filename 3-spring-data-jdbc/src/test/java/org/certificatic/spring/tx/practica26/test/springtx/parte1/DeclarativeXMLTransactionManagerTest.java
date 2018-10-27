@@ -42,7 +42,9 @@ public class DeclarativeXMLTransactionManagerTest {
 		log.info("getBusinessObject(5L): {}", bo);
 
 		log.info("\n----------------------------------------------");
-
+	}
+	@Test
+	public void declarativeXMLTransactionManagerTest2() {
 		log.info("calling: transactionalService.insertBusinessObject(null)");
 		try {
 			transactionalService.insertBusinessObject(null);
@@ -53,7 +55,10 @@ public class DeclarativeXMLTransactionManagerTest {
 		}
 
 		log.info("\n----------------------------------------------");
-
+	}
+	@Test
+	public void declarativeXMLTransactionManagerTest3() {
+		BusinessObject bo = null;
 		log.info("calling: transactionalService.updateBusinessObject(bo)");
 		try {
 			transactionalService.updateBusinessObject(bo);
@@ -64,6 +69,9 @@ public class DeclarativeXMLTransactionManagerTest {
 		}
 
 		log.info("\n----------------------------------------------");
+	}
+	@Test
+	public void declarativeXMLTransactionManagerTest4() {
 
 		log.info("calling: transactionalService.deleteBusinessObject(5L)");
 		try {

@@ -5,5 +5,9 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Define DataSurce H2 embedded database -->
+	<jdbc:embedded-database id="datasource" type="H2">
+		<jdbc:script location="classpath:/db/schema.sql" />
+		<jdbc:script location="classpath:/db/data.sql" />
+	</jdbc:embedded-database>
 
 </beans>

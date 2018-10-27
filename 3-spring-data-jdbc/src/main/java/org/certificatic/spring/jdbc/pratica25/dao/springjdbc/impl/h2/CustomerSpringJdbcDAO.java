@@ -192,7 +192,7 @@ public class CustomerSpringJdbcDAO extends GenericSpringJdbcDAO<Customer, Long>
 		// RowCallbackHandler
 		this.namedJdbcTemplate.query(SELECT_ALL_CUSTOMER_USER, new RowCallbackHandler() {
 			private @Getter CustomerRowMapper customerRowMapper=new CustomerRowMapper();
-			private UserName;
+			//private UserName;
 			
 			@Override
 			public void processRow(ResultSet arg0) throws SQLException {

@@ -16,12 +16,25 @@
 		resource="classpath:/spring/practica26/datasource-application-context.xml" />
 
 	<!-- Define DataSourceTransactionManager -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="datasource"/>
+	</bean>
 
 
 	<!-- tx:advice -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get" read-only="true"/>
+			
+		</tx:attributes>
+	</tx:advice>
 
 
 	<!-- Define Pointcut y Advisor mediante aop:config -->
+	<aop:config>
+		<aop:pointcut expression="execution(* org.certificatic.spring.tx..ITransactionalService.*(..))" id="transactionalServiceMethodExecution"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="transactionalServiceMethodExecution"/>
+	</aop:config>
 
 
 </beans>
