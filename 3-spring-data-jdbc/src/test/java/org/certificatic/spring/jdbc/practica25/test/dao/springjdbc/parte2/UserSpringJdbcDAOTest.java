@@ -2,6 +2,7 @@ package org.certificatic.spring.jdbc.practica25.test.dao.springjdbc.parte2;
 
 import java.util.List;
 
+import org.certificatic.spring.jdbc.pratica25.dao.api.ICustomerDAO;
 import org.certificatic.spring.jdbc.pratica25.dao.api.IUserDAO;
 import org.certificatic.spring.jdbc.pratica25.domain.entities.Customer;
 import org.certificatic.spring.jdbc.pratica25.domain.entities.User;
@@ -19,23 +20,19 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:/spring/practica25/spring-jdbc-application-context.xml")
-@ActiveProfiles("h2-local")
+@ActiveProfiles("h2-in-memory")
 public class UserSpringJdbcDAOTest {
 
 	@Autowired
 	private IUserDAO userDAO;
 
-	/*@Autowired
-	private ICustomerDAO customerDAO;
-	
 	@Autowired
-	private IAccountDAO accountDAO;*/
+	private ICustomerDAO customerDAO;
 
 	@Before
 	public void setUp() {
 		Assert.assertNotNull(userDAO);
-		//Assert.assertNotNull(customerDAO);
-		//Assert.assertNotNull(accountDAO);
+		Assert.assertNotNull(customerDAO);
 	}
 
 	@Test
@@ -63,12 +60,12 @@ public class UserSpringJdbcDAOTest {
 
 		log.info("user : {} {}", user, System.identityHashCode(user));
 
-		/*Customer customer = customerDAO.findById(user.getCustomer().getId());
-		
+		Customer customer = customerDAO.findById(user.getCustomer().getId());
+
 		Assert.assertEquals(user.getCustomer(), customer);
-		
+
 		log.info("customer : {} {}", customer,
-				System.identityHashCode(customer));*/
+				System.identityHashCode(customer));
 
 	}
 
@@ -115,13 +112,13 @@ public class UserSpringJdbcDAOTest {
 		log.info("modifiedUser : {} {}", modifiedUser,
 				System.identityHashCode(modifiedUser));
 
-		/*Customer customer = customerDAO
+		Customer customer = customerDAO
 				.findById(modifiedUser.getCustomer().getId());
-		
+
 		Assert.assertEquals(customer, modifiedUser.getCustomer());
-		
+
 		log.info("customer : {} {}", customer,
-				System.identityHashCode(customer));*/
+				System.identityHashCode(customer));
 	}
 
 	@Test
@@ -160,12 +157,12 @@ public class UserSpringJdbcDAOTest {
 		log.info("deletedUser : {} {}", deletedUser,
 				System.identityHashCode(deletedUser));
 
-		/*Customer customer = customerDAO.findById(user.getCustomer().getId());
-		
+		Customer customer = customerDAO.findById(user.getCustomer().getId());
+
 		Assert.assertNull(customer);
-		
+
 		log.info("customer : {} {}", customer,
-				System.identityHashCode(customer));*/
+				System.identityHashCode(customer));
 	}
 
 	@Test
