@@ -3,7 +3,9 @@ package org.certificatic.spring.jdbc.pratica25.domain.entities;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Data
 @NoArgsConstructor
@@ -11,12 +13,12 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Customer {
 
-	private Long id;
+	private @Setter @Getter Long id;
 
-	private String name;
+	private @Setter @Getter String name;
 
-	private String lastName;
+	private @Setter @Getter String lastName;
 
-	private User user;
+	private @Setter @Getter User user;
 
 }
