@@ -9,7 +9,7 @@ import org.springframework.jdbc.object.SqlUpdate;
 
 public class CustomerSqlUpdate extends SqlUpdate {
 
-	private static final String UPDATE = "UPDATE SPRING_DATA_CUSTOMER_TBL SET NAME = ?, LAST_NAME = ? WHERE CUSTOMER_ID = ?";
+	private static final String UPDATE = "UPDATE CUSTOMER_TBL SET NAME = ?, LAST_NAME = ? WHERE CUSTOMER_ID = ?";
 
 	public CustomerSqlUpdate(DataSource dataSource) {
 
@@ -22,7 +22,7 @@ public class CustomerSqlUpdate extends SqlUpdate {
 	}
 
 	public int execute(Long id, String name, String lastName) {
-		return update(name, lastName, id);
+		return this.update(name, lastName, id);
 	}
 
 }
