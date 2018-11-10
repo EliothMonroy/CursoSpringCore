@@ -5,8 +5,10 @@ import java.util.List;
 import org.certificatic.spring.orm.dao.api.IAccountDAO;
 import org.certificatic.spring.orm.dao.hibernate.GenericHibernateDAO;
 import org.certificatic.spring.orm.domain.entities.Account;
+import org.springframework.stereotype.Repository;
 
 // Habilitar bean Repository 
+@Repository
 public class AccountHibernateDAO extends GenericHibernateDAO<Account, Long>
 		implements IAccountDAO {
 
