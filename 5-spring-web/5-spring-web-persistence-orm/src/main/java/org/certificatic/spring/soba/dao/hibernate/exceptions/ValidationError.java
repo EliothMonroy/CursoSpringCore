@@ -28,7 +28,7 @@ public class ValidationError extends GenericErrorMessage {
 	public String getMessage() {
 		if (this.message == null)
 			this.message = String.format(
-					"Error de validación, el objeto %s con atributo (@%s)[%s] y con valor [%s]. Mensaje: [%s] '%s'",
+					"Error de validaciï¿½n, el objeto %s con atributo (@%s)[%s] y con valor [%s]. Mensaje: [%s] '%s'",
 					oject.getClass().getSimpleName(), code, attribute, rejectedValue, errorId, error);
 		return this.message;
 	}
