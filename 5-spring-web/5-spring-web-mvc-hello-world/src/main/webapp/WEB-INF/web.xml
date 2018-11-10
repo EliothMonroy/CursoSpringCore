@@ -9,14 +9,35 @@
 	<!-- DispatcherServlet (Spring Front Controller) -->
 	<!-- Implementar Servlet org.springframework.web.servlet.DispatcherServlet -->
 	<!-- con init-param contextConfigLocation -->
+	<servlet>
+		<servlet-name>dispatcherServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/mvc/dispatcherServlet-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
 
 	<!-- RequestMapping dispatcherServlet Servlet -->
 	<!-- Implementar servlet-mapping dispatcherServlet -->
+	<servlet-mapping>
+		<servlet-name>dispatcherServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
 
 	<!-- RootApplicationContext contextConfigLocation -->
 	<!-- Implementar context-param contextConfigLocation -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-application-context.xml</param-value>
+	</context-param>
+	
 
 	<!-- RootApplicationContext ContextLoaderListener -->
 	<!-- Implementar listener org.springframework.web.context.ContextLoaderListener -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 
 </web-app>
