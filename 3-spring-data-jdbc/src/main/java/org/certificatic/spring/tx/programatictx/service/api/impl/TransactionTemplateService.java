@@ -38,9 +38,7 @@ public class TransactionTemplateService implements IProgramaticTransactionalServ
 		log.info("{}",
 				colorWriter.getColoredMessage(Color.BLUE, "inside returningObjectProgramaticTransactionalMethod"));
 
-		BusinessObject bo = null;
-
-		bo = this.transactionTemplate.execute(new TransactionCallback<BusinessObject>() {
+		BusinessObject bo = this.transactionTemplate.execute(new TransactionCallback<BusinessObject>() {
 
 			@Override
 			public BusinessObject doInTransaction(TransactionStatus status) {
@@ -55,11 +53,12 @@ public class TransactionTemplateService implements IProgramaticTransactionalServ
 					return BusinessObject.builder().id(id).data(id + " is odd").build();
 
 				} catch (RuntimeException ex) {
-					// status.setRollbackOnly();
+					//status.setRollbackOnly();
 					throw ex;
 				}
 				// return null;
 			}
+
 		});
 
 		return bo;
