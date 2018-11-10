@@ -6,6 +6,7 @@ import java.util.List;
 import org.certificatic.spring.orm.dao.IGenericDAO;
 import org.certificatic.spring.orm.dao.hibernate.api.IHibernateExtraOperationsDAO;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import lombok.Getter;
 
@@ -15,6 +16,7 @@ public abstract class GenericHibernateDAO<T, ID extends Serializable>
 	protected @Getter final Class<T> persistentClass;
 
 	// Inyectar SessionFactory
+	@Autowired
 	protected @Getter SessionFactory sessionFactory;
 
 	public GenericHibernateDAO(final Class<T> type) {
