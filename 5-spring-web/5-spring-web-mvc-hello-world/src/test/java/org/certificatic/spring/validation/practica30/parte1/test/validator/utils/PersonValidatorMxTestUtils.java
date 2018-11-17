@@ -4,7 +4,7 @@ import java.util.Locale;
 
 import org.junit.Assert;
 import org.springframework.context.MessageSource;
-import org.springframework.validation.BindException;
+import org.springframework.validation.Errors;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 
@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class PersonValidatorMxTestUtils {
 
-	public static void printErrors(BindException errors, MessageSource messageSource, Locale mxLocale) {
+	public static void printErrors(Errors errors, MessageSource messageSource, Locale mxLocale) {
 
 		log.info("Errors {}", errors.getErrorCount());
 
