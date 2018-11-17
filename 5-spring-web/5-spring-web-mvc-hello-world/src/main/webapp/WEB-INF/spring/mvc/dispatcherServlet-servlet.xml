@@ -7,13 +7,14 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- Agregar paquete practica29 y practica31 a component-scan -->
-	<context:component-scan base-package="org.certificatic.spring.mvc.practica28">
+	<context:component-scan base-package="org.certificatic.spring.mvc.practica28,org.certificatic.spring.mvc.practica29">
 		<context:exclude-filter type="regex"
 			expression="org.certificatic.spring.mvc.practica28.rootbeans.*" />
 	</context:component-scan>
 
 	<!-- Agregar bean ContactFormValidationConfig para habilitar configuración 
 		de beans del Validador por medio de JavaConfig -->
+	<bean class="org.certificatic.spring.mvc.practica30.parte2.config.ContactFormValidationConfig"></bean>
 		
 
 	<!-- habilitar mvc annotation-driven -->

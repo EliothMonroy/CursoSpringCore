@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.validation.Validator;
 
 @Configuration
-@ComponentScan("org.certificatic.spring.mvc.practica29.parte2.controller")
+@ComponentScan("org.certificatic.spring.mvc.practica30.parte2.controller")
 public class ContactFormValidationConfig {
 
 	@Bean
