@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:context="http://www.springframework.org/schema/context"
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- Agregar paquete practica29 y practica31 a component-scan -->
-	<context:component-scan base-package="org.certificatic.spring.mvc.practica28,org.certificatic.spring.mvc.practica29">
+	<context:component-scan
+		base-package="org.certificatic.spring.mvc.practica28,org.certificatic.spring.mvc.practica29">
 		<context:exclude-filter type="regex"
 			expression="org.certificatic.spring.mvc.practica28.rootbeans.*" />
 	</context:component-scan>
 
-	<!-- Agregar bean ContactFormValidationConfig para habilitar configuración 
+	<!-- Agregar bean ContactFormValidationConfig para habilitar configuración
 		de beans del Validador por medio de JavaConfig -->
+	<bean class="org.certificatic.spring.mvc.practica30.parte2.config.ContactFormValidationConfig" />
 
 	<!-- habilitar mvc annotation-driven -->
 	<mvc:annotation-driven />
 
 	<!-- Implementar InternalResourceViewResolver -->
-	<bean id="viewResolver" 
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		
-		<property name="viewClass"
-			value="org.springframework.web.servlet.view.JstlView" />
-			
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
-	
+
 	</bean>
 
 </beans>
