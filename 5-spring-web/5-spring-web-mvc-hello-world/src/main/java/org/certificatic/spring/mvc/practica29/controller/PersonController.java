@@ -9,51 +9,68 @@ import org.certificatic.spring.validation.practica30.parte1.domain.Person;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
 // Implementar request mapping "/person"
-// Implementar Sessiones (después) "personCreated", "servertime"
+@RequestMapping("/person")
+// Implementar Sessiones (despuÃ©s) "personCreated", "servertime"
+@SessionAttributes({ "personCreated", "servertime" })
 class PersonController {
 
 	private List<Person> persons = Collections.synchronizedList(new ArrayList<Person>());
 
+	// /person o /person/
 	// Implementar request mapping "/" y "" por metodo GET
+	@RequestMapping(value = { "/", "" }, method = RequestMethod.GET)
 	public String showPersonsPage(Model model) {
 
 		log.info("showPersonsPage ---------------->");
 
 		// Agregar la coleccion persons al modelo
+		model.addAttribute("persons", persons);
 
 		// Agregar comando "personForm"
+		model.addAttribute("personForm", new Person());
 
 		return "person/list_and_create_person";
 	}
 
+	// /person/create
 	// Implementar request mapping "/create" por metodo POST
 	// Recibir como argumento el Person que proviene del formulario
-	public String createPerson(Model model) {
+	@RequestMapping(value = "/create", method = RequestMethod.POST)
+	public String createPerson(Model model, @ModelAttribute Person personForm) {
 
 		log.info("createPerson ---------------->");
 
 		log.info("processing form ...............");
 
-		// Agregar el person que proviene del formulario al listado "persons"
+		personForm.setId(persons.size() + 1);
 
-		// Agregar "personCreated" al modelo siendo éste objeto el obtenido
+		// Agregar el person que proviene del formulario al listado "persons"
+		persons.add(personForm);
+
+		// Agregar "personCreated" al modelo siendo Ã©ste objeto el obtenido
 		// desde el formulario
+		model.addAttribute("personCreated", personForm);
 
 		// Agregar "servertime" (new Date()) al modelo
+		model.addAttribute("servertime", new Date());
 
-		return "person/show_person_data"; // forward
-		// return "redirect:/person/showdata"; // sendRedirect
+		// return "person/show_person_data"; // forward
+		return "redirect:/person/showdata"; // sendRedirect
 	}
 
-	// En sessiones es necesario obtener los objetos de la sesión mediante el
-	// valor explicito sobre la anotación @ModelAttribute.
+	// En sessiones es necesario obtener los objetos de la sesiÃ³n mediante el
+	// valor explicito sobre la anotaciÃ³n @ModelAttribute.
 	// Implementar request mapping "/showdata" por metodo GET
+	@RequestMapping(value = "/showdata", method = RequestMethod.GET)
 	public String showPerson(Model model, @ModelAttribute("personCreated") Person personCreated,
 			@ModelAttribute("servertime") Date servertime) {
 
