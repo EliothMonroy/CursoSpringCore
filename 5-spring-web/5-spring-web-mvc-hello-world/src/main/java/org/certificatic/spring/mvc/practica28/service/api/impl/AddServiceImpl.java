@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 public class AddServiceImpl implements IAddService {
 
-	@Autowired(required = false)
+	@Autowired
 	private BeanComponent beanComponent;
 
 	public Double add(Double... numbers) {
