@@ -26,7 +26,8 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<!-- agregar /WEB-INF/spring/security/spring-security-application-context.xml -->
-		<param-value>/WEB-INF/spring/root-application-context.xml</param-value>
+		
+		<param-value>/WEB-INF/spring/root-application-context.xml, /WEB-INF/spring/security/spring-security-application-context.xml</param-value>
 	</context-param>
 	<!-- RootApplicationContext ContextLoaderListener -->
 	<listener>
@@ -52,7 +53,15 @@
 	</filter-mapping>
 
 	<!-- Agregar filter org.springframework.web.filter.DelegatingFilterProxy con nombre springSecurityFilterChain -->
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
 	
 	<!-- Agregar filter mapping de springSecurityFilterChain a /* -->
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 </web-app>

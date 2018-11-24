@@ -10,11 +10,32 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
 
 	<!-- configurar http con form-login, logout e intercept-url's -->
+	<security:http auto-config="true" use-expressions="true" access-denied-page="/access-denied">
+		<security:form-login login-page="/login" authentication-failure-url="/login?error=true" default-target-url="/welcome"/>
+		<security:logout invalidate-session="true" logout-success-url="/login" logout-url="/logout"/>
+		<security:intercept-url pattern="/login" access="permitAll"/>
+		<security:intercept-url pattern="/welcome" access="isAuthenticated()"/>
+		<security:intercept-url pattern="/root*/**" access="hasAnyRole('ROLE_ROOT','ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/admin*/**" access="hasAnyRole('ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/user*/**" access="hasRole('ROLE_USER')"/>
+	</security:http>
 
 
 	<!-- configurar authentication-manager -->
-	<!-- configurar authentication-provider -->
-	<!-- configurar user-service -->
+	<security:authentication-manager>
+		<!-- configurar authentication-provider -->
+		<security:authentication-provider>
+			<!-- configurar user-service -->
+			<security:user-service>
+				<security:user name="admin" password="admin" authorities="ROLE_ADMIN"/>
+				<security:user name="ivan" password="123123" authorities="ROLE_ADMIN,ROLE_ROOT"/>
+				<security:user name="user" password="user" authorities="ROLE_USER"/>
+			</security:user-service>
+		</security:authentication-provider>
+	
+	</security:authentication-manager>
+	
+	
 
 
 </beans>

@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+ERWQ<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/security/tags"
@@ -9,12 +9,13 @@
 <div id="topmenu">
 	<ul>
 		<c:set var="topMenuRendered" value="false"></c:set>
+		<security:authorize access="isAnonymous()">
 
 		<li><a href="${site_url}login" data-seccion="login">Login</a></li>
-
+		</security:authorize>
 
 		<!-- permitir visualización si el usuario está autenticado -->
-
+		<security:authorize access="isAuthenticated()">
 			<li><a href="${site_url}welcome" data-seccion="welcome">Welcome</a></li>
 	
 			<li><a href="${site_url}adminSection" data-seccion="adminSection">Admin
@@ -28,6 +29,9 @@
 	
 			<li><a href="#" data-href-url="${site_url}logout"
 				data-seccion="logout">Logout</a></li>
+		</security:authorize>
+
+			
 
 		<!--  -->
 

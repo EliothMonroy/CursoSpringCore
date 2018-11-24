@@ -13,6 +13,7 @@
 		base-package="org.certificatic.spring.mvcsecurity.practica32" />
 
 	<!-- habilitar global-method-security -->
+	<security:global-method-security pre-post-annotations="enabled"/>
 
 	<mvc:annotation-driven />
 
